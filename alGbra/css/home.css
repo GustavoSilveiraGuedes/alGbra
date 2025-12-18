@@ -5,6 +5,7 @@
     margin: 0px;
     padding: 0px;
     /* border: 1px solid white; */
+    z-index: 0;
 }
 
 :root {
@@ -115,10 +116,12 @@ p{
             border-radius: 10px;
             display: flex;
             flex-flow: row nowrap;
-            justify-content: center;
+            justify-content: space-between;
             margin: auto;
             padding: 0px 15px; 
             position: fixed;
+            min-width: 80vw;
+            z-index: 1;
         }
 
 
@@ -156,6 +159,7 @@ p{
                 color: var(--color3);
                 line-height: 25px;
                 margin-bottom: 230px;
+                max-width: 400px ;
                 text-align: justify;
             }
             
@@ -214,60 +218,67 @@ p{
                     text-align: center;
                 }
 
-                section#math > div.set{
-                    align-items: center;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    display: flex;
-                    flex-flow: row nowrap;
-                    justify-content: space-between;
-                    padding: 2px;
+                .subject-card {
                     width: 80vw;
+                    margin-bottom: 15px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                 }
-                    section#math div > h2{
-                        margin: 7px;
-                    } 
 
-                    section#math div > svg{
-                        transition: transform .3s ease-in-out;
-                        width: 30px;
+                    .subject-card .set {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 10px 15px;
+                        border: 1px solid var(--subject-color);
+                        border-radius: 5px;
+                        color: var(--subject-color);
+                        cursor: pointer;
+                        box-shadow: 0px 0px 10px -5px var(--subject-color);
+                        transition: border-radius .3s;
                     }
 
-                        .active-geo svg{
-                            transform: rotate(90deg);
-                        }
+.subject-card.active .set {
+    border-radius: 5px 5px 0 0;
+    background-color: rgba(255, 255, 255, 0.05);
+}
 
-                    section#math div#planeGeo{
-                        border: 1px solid yellow;
-                        box-shadow: 0px 0px 10px -5px;
-                        color: yellow;
-                    }
+.subject-card .set h2 { margin: 0; font-size: 1.5rem; }
 
-                    section#math div#functions{
-                        border: 1px solid lightgreen;
-                        box-shadow: 0px 0px 10px -5px;
-                        color: lightgreen;
-                    }
+.subject-card .set svg {
+    width: 25px;
+    transition: transform 0.3s ease-in-out;
+}
+.subject-card.active .set svg {
+    transform: rotate(90deg);
+}
 
-                    section#math div#spatialGeo{
-                        border: 1px solid orangered;
-                        box-shadow: 0px 0px 10px -5px;
-                        color: orangered;
-                    }
+.subject-card .content {
+    width: 95%; 
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    
+    border: 1px solid transparent;
+    border-top: 0;
+    border-radius: 0 0 5px 5px;
+    
+    transition: 
+        max-height 0.4s ease-out, 
+        padding 0.4s ease-out, 
+        border-color 0.4s ease-out, 
+        opacity 0.3s ease-out;
+}
 
-                        section#math .content{
-                            display: flex;
-                            flex-flow: row wrap;
-                            margin-bottom: 20px;
-                            max-height: 0;
-                            overflow: hidden;
-                            padding: 0 15px; 
-                            transition: max-height 0.4s ease-out, padding 0.4s ease-out; 
-                            width: 80vw;
-                        }
+.subject-card.active .content {
+    max-height: 1000px; /* Suficiente para o card */
+    opacity: 1;
+    padding: 15px;
+    border-color: var(--subject-color);
+    box-shadow: 0px 5px 15px -8px var(--subject-color);
+}
 
-                            .content.active-content{
-                                padding: 15px; 
-                            }
-
+                           
 }
