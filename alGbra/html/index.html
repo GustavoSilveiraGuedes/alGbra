@@ -1,57 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="../css/home.css">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
     <title>alGbra</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/home.css">
 </head>
-
 <body>
     <header>
         <nav>
             <a href="#">Home</a>
             <a href="#math">Math</a>
-
             <a href="login.html">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-circle"
-                    viewBox="0 0 16 16">
+                <svg class="bi bi-person-circle" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                    <path fill-rule="evenodd"
-                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" fill-rule="evenodd" />
                 </svg>
             </a>
-
-            <a href="#physics">Physics</a> 
+            <a href="#physics">Phys</a> 
             <a href="About.html">About</a>
         </nav>
     </header>
 
     <main>
         <section id="alGbra">
-
             <a href="#" id="linkalGbra">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-amd" viewBox="0 0 16 16">
+                <svg class="bi bi-amd" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                     <path d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0zM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2z"/>
                 </svg>
                 www.alGbra.com
             </a>
-
             <h1 class="hiddenScroll" data-animation="typing">.alGbra</h1>
             <p class="hiddenScroll" data-animation="intro1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis dignissimos ipsam minus eius provident nesciunt vel.</p>
 
             <div>
                 <h2 class="hiddenScroll" data-animation="intro2">Challenge yourself</h2>
                 <p class="hiddenScroll" data-animation="intro1">Discover the daily algebraic formula.</p>
-                
-                <a href="challenge.html" class="hiddenScroll" data-animation="intro1">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/>
+                <a class="hiddenScroll" data-animation="intro1" href="challenge.html">
+                    <svg class="bi bi-graph-up-arrow" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5" fill-rule="evenodd"/>
                     </svg>
                 </a>
             </div>
@@ -65,45 +53,91 @@
             <div class="subject-card" style="--subject-color: lightgreen;">
                 <div class="set hiddenScroll" data-animation="intro1">
                     <h2>Functions</h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                    <svg class="bi bi-caret-right-fill" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                     </svg>
                 </div>
                 <div class="content">
+                    <div class="card-grid">
+                        <div class="card">
+                            <img src="../img/functions/quadraticEquation.webp" class="card-img-top">
+                            <div class="card-body">
+                                <h3>Quadratic equation</h3>
+                                <a href="#">About <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../img/functions/quadraticEquation.webp" class="card-img-top">
+                            <div class="card-body">
+                                <h3>Quadratic equation</h3>
+                                <a href="#">About <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../img/functions/quadraticEquation.webp" class="card-img-top">
+                            <div class="card-body">
+                                <h3>Quadratic equation</h3>
+                                <a href="#">About <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../img/functions/quadraticEquation.webp" class="card-img-top">
+                            <div class="card-body">
+                                <h3>Quadratic equation</h3>
+                                <a href="#">About <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../img/functions/quadraticEquation.webp" class="card-img-top">
+                            <div class="card-body">
+                                <h3>Quadratic equation</h3>
+                                <a href="#">About <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="../img/functions/quadraticEquation.webp" class="card-img-top">
+                            <div class="card-body">
+                                <h3>Quadratic equation</h3>
+                                <a href="#">About <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="subject-card" style="--subject-color: yellow;">
                 <div class="set hiddenScroll" data-animation="intro1">
                     <h2>Plane Geometry</h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                    <svg class="bi bi-caret-right-fill" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                     </svg>
                 </div>
                 <div class="content">
+                    <div class="card-grid"></div>
                 </div>
             </div>
-
-            <div class="subject-card" style="--subject-color: orangered;">
-                <div class="set hiddenScroll" data-animation="intro1">
-                    <h2>Spatial Geometry</h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                    </svg>
-                </div>
-                <div class="content">
-                </div>
-            </div>
-
         </section>
     </main>
 
-
     <script src="../js/home.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
