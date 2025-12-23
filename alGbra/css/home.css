@@ -80,7 +80,7 @@ h1, h2, h3 {
 
             header nav a {
                 color: var(--color5);
-                margin: 0 10px;
+                margin: 0 15px;
                 text-decoration: none;
                 text-shadow: 1px 1px 1x var(--color4);
                 transition: 0.3s;
@@ -218,7 +218,6 @@ h1, h2, h3 {
                     box-sizing: border-box;
                     display: flex;
                     flex-wrap: wrap;
-                    gap: 15px;
                     justify-content: center;
                     margin: 0 auto;
                     max-height: 0;
@@ -251,20 +250,14 @@ h1, h2, h3 {
                             display: flex;
                             flex: 1 1 200px;
                             flex-direction: column;
-                            margin: 0;
-                            max-width: calc(50% - 8px);
-                        }
-
-                        @media (max-width: 470px) {
-                            section#math .subject-card .content .card-grid .card {
-                                max-width: 70%;
-                            }
+                            margin: 5px;
+                            max-width: 70%;
                         }
 
                             section#math .subject-card .content .card-grid .card h3 {
                                 color: var(--color5);
                                 font-size: 1.2em;
-                                margin: 15px 0;
+                                margin: 15px auto;
                                 text-align: center;
                             }
 
