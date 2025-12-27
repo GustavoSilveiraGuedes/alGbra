@@ -285,6 +285,7 @@ h1, h2, h3 {
 
                             section#math .subject-card .content .card-grid .card a::after {
                                 content: "";
+                                color: var(--color5);
                                 width: 15px;
                                 height: 15px;
                                 background-color: currentColor;
