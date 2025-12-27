@@ -1,25 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- LÓGICA DO ACORDEÃO ---
     const accordionHeaders = document.querySelectorAll('.subject-card .set');
 
+    // --- 1. LÓGICA DE ANIMAÇÃO NO SCROLL ---
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const animation = el.dataset.animation;
+                el.classList.add(animation);
+                el.classList.remove('hiddenScroll');
+            }
+        });
+    }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
+
+    document.querySelectorAll('[data-animation]').forEach(el => observer.observe(el));
+
+    // --- 2. LÓGICA DO ACORDEÃO ---
     const updateHeight = (card) => {
         const content = card.querySelector('.content');
         if (card.classList.contains('active')) {
-            // Recalcula o scrollHeight atual (importante para quando os cards empilham)
             content.style.maxHeight = `${content.scrollHeight + 60}px`;
         }
     };
 
     const toggleAccordion = (header) => {
         const card = header.closest('.subject-card');
-        const content = card.querySelector('.content');
         const isActive = card.classList.contains('active');
 
+        // Fechar outros e resetar APENAS o conteúdo interno deles
         document.querySelectorAll('.subject-card').forEach(item => {
             if (item !== card) {
                 item.classList.remove('active');
                 item.querySelector('.content').style.maxHeight = '0';
+                
+                // NOTA: Resetamos apenas o que está DENTRO de .content
+                item.querySelectorAll('.content [data-animation]').forEach(el => {
+                    el.classList.remove(el.dataset.animation);
+                    el.classList.add('hiddenScroll');
+                });
             }
         });
 
@@ -28,7 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
             updateHeight(card);
         } else {
             card.classList.remove('active');
-            content.style.maxHeight = '0';
+            card.querySelector('.content').style.maxHeight = '0';
+            
+            // Resetamos apenas o conteúdo interno ao fechar
+            card.querySelectorAll('.content [data-animation]').forEach(el => {
+                el.classList.remove(el.dataset.animation);
+                el.classList.add('hiddenScroll');
+            });
         }
     };
 
@@ -36,26 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
         header.addEventListener('click', () => toggleAccordion(header));
     });
 
-    // RECALCULAR AO REDIMENSIONAR: Garante que o card não suma ao diminuir a tela
     window.addEventListener('resize', () => {
         const activeCard = document.querySelector('.subject-card.active');
-        if (activeCard) {
-            updateHeight(activeCard);
-        }
+        if (activeCard) updateHeight(activeCard);
     });
-
-    // --- ANIMAÇÃO NO SCROLL ---
-    const animatedElements = document.querySelectorAll('[data-animation]');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                el.classList.remove('hiddenScroll');
-                el.classList.add(el.dataset.animation);
-                observer.unobserve(el);
-            }
-        });
-    }, { rootMargin: '0px 0px -100px 0px', threshold: 0.1 });
-
-    animatedElements.forEach(el => observer.observe(el));
 });
