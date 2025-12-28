@@ -1,21 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+
 :root {
     color-scheme: dark;
     forced-color-adjust: none;
-
     --color1: #61568C;
     --color2: #475459;
     --color3: #818B8C;
     --color4: #070A0D;
     --color5: #F2F2F2;
 }
+
 
 body {
     background: var(--color4) url(../img/visual/homeBackgroundImg1.jpg) repeat top center;
@@ -24,35 +26,43 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-h1, h2, h3 {
+
+h1, h2, h3, option {
     font-family: "JetBrains Mono", monospace;
 }
+
 
 .hiddenScroll {
     opacity: 0;
 }
 
-.intro1 {
-    animation: intro1 2s forwards;
+
+.intro1 { 
+    animation: intro1 2s forwards; 
 }
 
-.intro2 {
-    animation: intro2 1s forwards;
+
+.intro2 { 
+    animation: intro2 1s forwards; 
 }
 
-.typing {
-    animation: typing 1.5s steps(7) forwards;
+
+.typing { 
+    animation: typing 1.5s steps(7) forwards; 
 }
+
 
 @keyframes intro1 {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
+
 @keyframes intro2 {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
 
 @keyframes typing {
     0% { border-right: 3px solid var(--color1); width: 0; }
@@ -60,7 +70,9 @@ h1, h2, h3 {
     100% { border-right: transparent; width: 7ch; }
 }
 
+
 @media (max-width: 700px) {
+
     header {
         display: flex;
         justify-content: center;
@@ -68,11 +80,11 @@ h1, h2, h3 {
 
         header nav {
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(2px);
+            background-color: rgba(0, 0, 0, 0.4);
             border: 1px solid var(--color1);
+            border-radius: 0 0 10px 10px;
             border-top: 0;
-            border-radius:0 0 10px 10px;
             display: flex;
             justify-content: space-between;
             min-width: 80vw;
@@ -85,65 +97,31 @@ h1, h2, h3 {
                 color: var(--color5);
                 margin: 0 15px;
                 text-decoration: none;
-                text-shadow: 1px 1px 1x var(--color4);
+                text-shadow: 1px 1px 1px var(--color4);
                 transition: 0.3s;
             }
 
             header nav svg {
                 height: 40px;
                 width: 40px;
-                left: 50%;
-                position: absolute;
-                top: 50%;
-                transform: translate(-50%, -50%);
             }
+
 
     main section {
         align-items: center;
         display: flex;
         flex-direction: column;
-        margin-top: 230px;
+        margin-top: 150px;
         padding: 10px;
     }
 
-        section#alGbra #linkalGbra {
-            align-items: center;
-            color: var(--color1);
-            display: flex;
-            font-size: 0.7em;
-            gap: 3px;
-            margin-bottom: 10px;
-            text-decoration: none;
-        }
-
-            section#alGbra #linkalGbra svg {
-                width: 10px;
-            }
-
-        section#alGbra h1 {
-            font-size: 4.6em;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
-        section#alGbra p {
-            color: var(--color3);
-            line-height: 25px;
-            max-width: 400px;
-            text-align: justify;
-        }
-
+        /* --- Seção alGbra --- */
         section#alGbra div {
             align-items: center;
             display: flex;
             flex-direction: column;
             margin: 200px 0;
         }
-
-            section#alGbra div h2 {
-                border-bottom: 1px solid var(--color1);
-                font-size: 1.7em;
-            }
 
             section#alGbra div a {
                 background-color: var(--color1);
@@ -158,6 +136,54 @@ h1, h2, h3 {
                     width: 30px;
                 }
 
+            section#alGbra div h2 {
+                border-bottom: 1px solid var(--color1);
+                font-size: 1.7em;
+            }
+
+        section#alGbra h1 {
+            font-size: 4.6em;
+            margin-bottom: 30px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        section#alGbra .language-container {
+            margin: 0;
+        }
+
+            section#alGbra .language-container #language-toggle {
+                background-color: transparent;
+                border: 1px solid var(--color1);
+                border-radius: 5px;
+                color: var(--color5);
+                padding: 5px;
+                width: 70px;
+            }
+
+        section#alGbra #linkalGbra {
+            align-items: center;
+            color: var(--color1);
+            display: flex;
+            font-size: 0.7em;
+            gap: 3px;
+            margin: 70px 0 10px 0;
+            text-decoration: none;
+        }
+
+            section#alGbra #linkalGbra svg {
+                width: 10px;
+            }
+
+        section#alGbra p {
+            color: var(--color3);
+            line-height: 25px;
+            max-width: 400px;
+            text-align: justify;
+        }
+
+
+        /* --- Seção Math --- */
         section#math {
             margin: 100px 0;
         }
@@ -185,27 +211,19 @@ h1, h2, h3 {
                 width: 85vw;
             }
 
-                section#math .subject-card .set {
-                    align-items: center;
-                    border: 1px solid var(--subject-color);
-                    border-radius: 5px;
+                section#math .subject-card.active .content {
+                    border-color: var(--subject-color);
+                    border-radius: 0 0 5px 5px;
                     box-shadow: 0px 0px 20px -10px var(--subject-color);
-                    color: var(--subject-color);
-                    cursor: pointer;
-                    display: flex;
-                    justify-content: space-between;
-                    padding: 10px 15px;
-                    transition: border-radius 0.3s;
+                    opacity: 1;
+                    padding: 20px 10px;
                 }
 
-                    section#math .subject-card .set h2 {
-                        font-size: 1.5rem;
-                        margin: 0;
-                    }
-
-                    section#math .subject-card .set svg {
-                        transition: transform 0.3s ease;
-                        width: 25px;
+                    section#math .subject-card.active .content h2 {
+                        border-bottom: 1px solid white;
+                        margin: 30px 0;
+                        text-align: center;
+                        width: 100%;
                     }
 
                 section#math .subject-card.active .set {
@@ -219,7 +237,6 @@ h1, h2, h3 {
                 section#math .subject-card .content {
                     border: 1px solid transparent;
                     border-top: 0;
-                    box-sizing: border-box;
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: center;
@@ -230,21 +247,6 @@ h1, h2, h3 {
                     transition: border-color 0.4s ease, max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
                     width: 99%;
                 }
-
-                section#math .subject-card.active .content {
-                    border-color: var(--subject-color);
-                    border-radius: 0 0 5px 5px;
-                    box-shadow: 0px 0px 20px -10px var(--subject-color);
-                    opacity: 1;
-                    padding: 20px 10px;
-                }
-
-                    section#math .subject-card.active .content h2{
-                        border-bottom: 1px solid white;
-                        margin: 30px 0;
-                        text-align: center;
-                        width: 100%;
-                    }
 
                     section#math .subject-card .content .card-grid {
                         align-items: flex-start;
@@ -258,13 +260,33 @@ h1, h2, h3 {
                         section#math .subject-card .content .card-grid .card {
                             background-color: transparent;
                             border: 1px solid var(--color5);
-                            box-sizing: border-box;
                             display: flex;
                             flex: 1 1 200px;
                             flex-direction: column;
                             margin: 5px;
                             max-width: 70%;
                         }
+
+                            section#math .subject-card .content .card-grid .card a {
+                                align-items: center;
+                                border: 1px solid var(--color5);
+                                border-radius: 5px;
+                                color: var(--color5);
+                                display: flex;
+                                gap: 8px;
+                                justify-content: center;
+                                padding: 5px;
+                                text-decoration: none;
+                                transition: 0.3s;
+                            }
+
+                                section#math .subject-card .content .card-grid .card a::after {
+                                    background-color: var(--color5);
+                                    content: "";
+                                    height: 15px;
+                                    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg>');
+                                    width: 15px;
+                                }
 
                             section#math .subject-card .content .card-grid .card h3 {
                                 color: var(--color5);
@@ -273,24 +295,21 @@ h1, h2, h3 {
                                 text-align: center;
                             }
 
-                            section#math .subject-card .content .card-grid .card a {
-                                border: 1px solid var(--color5);
-                                color: var(--color5);
-                                text-decoration: none;
-                                padding: 5px;
-                                border-radius: 5px;
-                                display: flex;
-                                align-items: center;    
-                                justify-content: center;
-                                gap: 8px;               
-                                transition: 0.3s;
-                            }
+                section#math .subject-card .set {
+                    align-items: center;
+                    border: 1px solid var(--subject-color);
+                    border-radius: 5px;
+                    box-shadow: 0px 0px 20px -10px var(--subject-color);
+                    color: var(--subject-color);
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 10px 15px;
+                    transition: border-radius 0.3s;
+                }
 
-                                section#math .subject-card .content .card-grid .card a::after {
-                                    content: "";
-                                    width: 15px;
-                                    height: 15px;
-                                    background-color: var(--color5);
-                                    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg>');
-                                }
+                    section#math .subject-card .set svg {
+                        transition: transform 0.3s ease;
+                        width: 25px;
+                    }
 }
