@@ -1,2 +1,2 @@
 # sites
-<a href="alGbra/html/index.html">alGbra</a>
+<a href="alGbra/html/home/index.html">alGbra</a>

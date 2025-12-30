@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 async function changeLanguage(lang) {
     try {
-        const response = await fetch(`../i18n/home/${lang}.json`);
+        const response = await fetch(`../../i18n/home/${lang}.json`);
         if (!response.ok) throw new Error(`Erro: ${response.statusText}`);
         
         const translations = await response.json();
