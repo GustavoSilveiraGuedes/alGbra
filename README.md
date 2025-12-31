@@ -1,2 +1,2 @@
 # allGbra
-<a href="allGbra/html/home/index.html">allGbra</a>
+<a href="allGbra/index.html">allGbra</a>
