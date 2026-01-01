@@ -15,6 +15,7 @@
   "thirdDegreeFunctionH3": "Função de<br>Terceiro Grau",
   "exponentialFunctionH3": "Função<br>Exponencial",
   "logarithmicFunctionH3": "Função<br>Logarítmica",
+  "absoluteValueFunctionH3": "Função<br>Modular",
   "internalAnglesH3": "Soma dos<br>Ângulos Internos",
   "exteriorAnglesH3": "Soma dos<br>Ângulos Externos",
   "diagonalsNumberH3": "Número de<br>Diagonais",
@@ -23,6 +24,7 @@
   "trapezeH3": "Trapézio",
   "rhombusH3": "Losango",
   "triangleH3": "Triângulo",
+  "pentagonH3": "Pentagono",
   "hexagonH3": "Hexágono",
   "circleH3": "Círculo"
 }

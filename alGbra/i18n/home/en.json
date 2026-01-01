@@ -15,6 +15,7 @@
   "thirdDegreeFunctionH3": "Third Degree<br>Function",
   "exponentialFunctionH3": "Exponential<br>Function",
   "logarithmicFunctionH3": "Logarithmic<br>Function",
+  "absoluteValueFunctionH3": "Absolute Value<br>Function",
   "internalAnglesH3": "Internal<br>Angles Sum",
   "exteriorAnglesH3": "Exterior<br>Angles Sum",
   "diagonalsNumberH3": "Number of<br>Diagonals",
@@ -23,6 +24,7 @@
   "trapezeH3": "Trapeze",
   "rhombusH3": "Rhombus",
   "triangleH3": "Triangle",
+  "pentagonH3": "Pentagon",
   "hexagonH3": "Hexagon",
   "circleH3": "Circle"
 }
