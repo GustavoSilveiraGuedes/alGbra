@@ -47,5 +47,9 @@
   "tangentH3": "Tangent",
   "cossecantH3": "Cosecant",
   "secantH3": "Secant",
-  "cotangentH3": "Cotangent"
+  "cotangentH3": "Cotangent",
+
+  "financialMathH2": "Financial Mathematics",
+  "simpleInterestH3": "Simple<br>Interest",
+  "compoundInterestH3": "Compound<br>Interest"
 }
