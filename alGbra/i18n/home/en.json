@@ -69,5 +69,11 @@
   "repeatedPermutationH3": "Repeated<br>Permutation",
   "circularPermutationH3": "Circular<br>Permutation",
   "arrangementH3": "Simple<br>Arrangement",
-  "combinationH3": "Simple<br>Combination"
+  "combinationH3": "Simple<br>Combination",
+
+  "analyticGeometryH2": "Analytic Geometry",
+
+  "interpointDistanceH3": "Interpoint<br>Distance",
+  "lineEquationH3": "Line<br>Equation",
+  "circleEquationH3": "Circle<br>Equation"
 }
