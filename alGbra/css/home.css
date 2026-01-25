@@ -137,24 +137,8 @@ h1, h2, h3, option {
         width: 40px;
     }
 
-    header nav a[data-i18n="homeA"] {
-        order: 1;
-    }
-
-    header nav a[data-i18n="mathA"] {
-        order: 2;
-    }
-
-    header nav a[href="html/account/login.html"] {
-        order: 3;
-    }
-
-    header nav a[data-i18n="physA"] {
-        order: 4;
-    }
-
-    header nav a[data-i18n="aboutA"] {
-        order: 5;
+    header nav a#homeSvg{
+        display: none;
     }
 
     main section {
@@ -405,19 +389,7 @@ h1, h2, h3, option {
     }
 
     header nav a[data-i18n="homeA"] {
-        order: 1;
-    }
-
-    header nav a[data-i18n="mathA"] {
-        order: 2;
-    }
-
-    header nav a[data-i18n="physA"] {
-        order: 3;
-    }
-
-    header nav a[data-i18n="aboutA"] {
-        order: 4;
+        display: none;
     }
 
     header nav a[href="html/account/login.html"] {
@@ -678,19 +650,7 @@ h1, h2, h3, option {
     }
 
     header nav a[data-i18n="homeA"] {
-        order: 1;
-    }
-
-    header nav a[data-i18n="mathA"] {
-        order: 2;
-    }
-
-    header nav a[data-i18n="physA"] {
-        order: 3;
-    }
-
-    header nav a[data-i18n="aboutA"] {
-        order: 4;
+        display: none;
     }
 
     header nav a[href="html/account/login.html"] {

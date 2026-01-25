@@ -1,45 +1,13 @@
 /**
- * O MESTRE DE OBRAS (Evento Principal)
+ * main.js
+ * Lógica específica da página Home
  */
 document.addEventListener('DOMContentLoaded', () => {
 
-    const langBtn = document.getElementById('language-toggle');
-
-    initScrollAnimations();
     initAccordions();
-    initLanguageSystem(langBtn);
-
-    const savedLang = localStorage.getItem('preferred-lang') || 'en';
-
-    if (langBtn) {
-        langBtn.innerHTML = savedLang === 'pt' ? 'PT-BR' : 'EN-US';
-        changeLanguage(savedLang);
-    }
 
     /* ------------------------------
-       ANIMAÇÕES AO SCROLL (ÚNICO DONO)
-    ------------------------------ */
-    function initScrollAnimations() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-
-                const el = entry.target;
-                el.classList.remove('hiddenScroll');
-                el.classList.add(el.dataset.animation);
-            });
-        }, {
-            rootMargin: '0px 0px -50px 0px',
-            threshold: 0.1
-        });
-
-        document
-            .querySelectorAll('[data-animation]')
-            .forEach(el => observer.observe(el));
-    }
-
-    /* ------------------------------
-       ACORDEÕES (SEM FORÇAR ANIMAÇÃO)
+       ACORDEÕES
     ------------------------------ */
     function initAccordions() {
         const headers = document.querySelectorAll('.subject-card .set');
@@ -55,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.querySelectorAll('.content [data-animation]').forEach(el => {
                 el.classList.remove(el.dataset.animation);
                 el.classList.add('hiddenScroll');
-                void el.offsetWidth; // força reflow
+                void el.offsetWidth; // força reflow para permitir reanimação
             });
         };
 
@@ -63,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = header.closest('.subject-card');
             const isActive = card.classList.contains('active');
 
+            // Fecha os outros
             document.querySelectorAll('.subject-card').forEach(item => {
                 if (item !== card) {
                     item.classList.remove('active');
@@ -71,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
+            // Fecha o atual
             if (isActive) {
                 card.classList.remove('active');
                 card.querySelector('.content').style.maxHeight = '0';
@@ -78,57 +48,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            // Abre o atual
             card.classList.add('active');
             updateHeight(card);
-            // ❌ NÃO força animação aqui
         };
 
         headers.forEach(header => {
             header.addEventListener('click', () => toggleAccordion(header));
         });
 
+        // Ajusta altura ao redimensionar
         window.addEventListener('resize', () => {
             const active = document.querySelector('.subject-card.active');
             if (active) updateHeight(active);
         });
     }
-
-    /* ------------------------------
-       SISTEMA DE IDIOMA
-    ------------------------------ */
-    function initLanguageSystem(btn) {
-        if (!btn) return;
-
-        btn.addEventListener('click', () => {
-            const isEn = btn.innerHTML.trim() === 'EN-US';
-            const newLang = isEn ? 'pt' : 'en';
-
-            btn.innerHTML = isEn ? 'PT-BR' : 'EN-US';
-            changeLanguage(newLang);
-        });
-    }
 });
-
-/* ------------------------------
-   FUNÇÃO GLOBAL DE TRADUÇÃO
------------------------------- */
-async function changeLanguage(lang) {
-    try {
-        const response = await fetch(`i18n/home/${lang}.json`);
-        if (!response.ok) throw new Error(response.statusText);
-
-        const translations = await response.json();
-
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            if (translations[key]) {
-                el.innerHTML = translations[key];
-            }
-        });
-
-        localStorage.setItem('preferred-lang', lang);
-
-    } catch (error) {
-        console.error('Falha na tradução:', error);
-    }
-}
