@@ -1,0 +1,16 @@
+@media (max-width: 1299px) {
+
+    section#login{
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 10px;
+        margin: 50px auto;
+        width: 80vw;
+    }
+
+    input[type="submit"]{
+        background-color: transparent;
+        padding: 5px 10px;
+    }
+
+}
