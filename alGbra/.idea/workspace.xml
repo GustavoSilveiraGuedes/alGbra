@@ -5,29 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec724ed2-bb48-47b4-97cf-7bdd89099f0a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/exemplo-frontend.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/algbra/AlgbraApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/algbra/config/CorsConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/algbra/config/SecurityBeansConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/algbra/controller/UsuarioController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/algbra/dto/CadastroRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/algbra/dto/LoginRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/algbra/dto/UsuarioResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/algbra/entity/Usuario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/algbra/exception/EmailAlreadyExistsException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/algbra/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/algbra/exception/InvalidCredentialsException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/algbra/repository/UsuarioRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/exemple/algbra/service/UsuarioService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/html/account/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/html/account/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/html/account/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/html/account/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/entity/DesafioDiarioEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/entity/FormulaEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/entity/ParticipacaoEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/entity/ParticipacaoId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/entity/UsuarioEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -38,61 +35,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0025241266223388" />
-      <entry key="MS500" value="1.3022889189583404" />
-      <entry key="S2" value="1.741490441379574" />
-      <entry key="S5" value="1.8872422679705454" />
-      <entry key="S10" value="1.9419689574897259" />
-      <entry key="S30" value="2.012518161943877" />
-      <entry key="S60" value="2.1696910635376154" />
-      <entry key="M2" value="2.4188332508235737" />
-      <entry key="M5" value="2.7073680893886714" />
-      <entry key="M10" value="2.841238675035816" />
-      <entry key="M15" value="2.8911796006328605" />
-      <entry key="M30" value="2.944042671571572" />
-      <entry key="H1" value="2.9716234074189076" />
-      <entry key="H2" value="2.9857107932100315" />
-      <entry key="H4" value="2.992829988185843" />
-      <entry key="D1" value="2.9988014536332264" />
-      <entry key="W1" value="2.9998286920866937" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0000000000004818" />
+      <entry key="S30" value="1.00012258469367" />
+      <entry key="S60" value="1.015636341813812" />
+      <entry key="M2" value="1.184810376560889" />
+      <entry key="M5" value="2.348946952858279" />
+      <entry key="M10" value="5.267476623304484" />
+      <entry key="M15" value="8.811196157306792" />
+      <entry key="M30" value="22.53802278365176" />
+      <entry key="H1" value="49.16097169494629" />
+      <entry key="H2" value="80.05185426587794" />
+      <entry key="H4" value="104.66388990439015" />
+      <entry key="D1" value="132.43919841664754" />
+      <entry key="W1" value="138.03965745131896" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
+      <entry key="S2" value="1.5438265501687006E-173" />
+      <entry key="S5" value="8.300662733321823E-70" />
+      <entry key="S10" value="3.6477704769163693E-35" />
+      <entry key="S30" value="6.577318407483564E-12" />
+      <entry key="S60" value="6.729793517991515E-6" />
+      <entry key="M2" value="0.00864665721889029" />
+      <entry key="M5" value="0.7069419397272676" />
+      <entry key="M10" value="3.204049505670062" />
+      <entry key="M15" value="5.58317059176126" />
+      <entry key="M30" value="11.537230366237694" />
+      <entry key="H1" value="19.83018824652583" />
+      <entry key="H2" value="28.032571455164888" />
+      <entry key="H4" value="34.05974169840128" />
+      <entry key="D1" value="40.51684124690349" />
+      <entry key="W1" value="41.7837960418599" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9484456160179632" />
-      <entry key="MS500" value="1.2879258655749626" />
-      <entry key="S2" value="1.7366686920746204" />
-      <entry key="S5" value="1.885150409492615" />
-      <entry key="S10" value="1.9408921957022898" />
-      <entry key="S30" value="2.012080690226106" />
-      <entry key="S60" value="2.169308064726292" />
-      <entry key="M2" value="2.4185061204551075" />
-      <entry key="M5" value="2.707173835052774" />
-      <entry key="M10" value="2.8411267987175073" />
-      <entry key="M15" value="2.8911013454735355" />
-      <entry key="M30" value="2.9440016004308456" />
-      <entry key="H1" value="2.9716023647039793" />
-      <entry key="H2" value="2.9857001423197422" />
-      <entry key="H4" value="2.9928246300083847" />
-      <entry key="D1" value="2.9988005560275925" />
-      <entry key="W1" value="2.999828563744859" />
+      <entry key="MS100" value="0.9075191553171609" />
+      <entry key="MS500" value="0.9807790039885513" />
+      <entry key="S2" value="0.9951597218200828" />
+      <entry key="S5" value="0.9980610700524115" />
+      <entry key="S10" value="0.999030064639377" />
+      <entry key="S30" value="0.9997984221838888" />
+      <entry key="S60" value="1.0154328042551901" />
+      <entry key="M2" value="1.1929321332515006" />
+      <entry key="M5" value="3.0504028771326204" />
+      <entry key="M10" value="8.459790002873229" />
+      <entry key="M15" value="14.379503836830928" />
+      <entry key="M30" value="34.05209662589657" />
+      <entry key="H1" value="68.96175097808843" />
+      <entry key="H2" value="108.05878410840711" />
+      <entry key="H4" value="138.7063940885045" />
+      <entry key="D1" value="172.95233442792957" />
+      <entry key="W1" value="179.82290022175113" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -100,32 +97,39 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="3KnGNIUwciSMaeqMElaLKgKwqal" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.AlgbraApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="alGbra" />
@@ -137,6 +141,24 @@
       <module name="alGbra" />
       <option name="filePath" />
       <method v="2" />
+    </configuration>
+    <configuration name="AlgbraApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <envs>
+        <env name="USERNAME_DATABASE" value="gustavo" />
+        <env name="PASSWORD_DATABASE" value="#4T4t4doce" />
+      </envs>
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.algbra.AlgbraApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.algbra.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
   </component>
   <component name="SharedIndexes">
@@ -159,5 +181,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
