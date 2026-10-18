@@ -86,19 +86,3 @@ VALUES	('Função Primeiro Grau', '', '', 'First Degree Function', '', '', 'Mate
           ('Arranjo Simples', '', '', 'Simple Arrangement', '', '', 'Matemática', 'Análise Combinatória', 3, '3EM', 'XVII', ''),
 
           ('Combinação Simples', '', '', 'Simple Combination', '', '', 'Matemática', 'Análise Combinatória', 3, '3EM', 'XVII', '');
-
-
-INSERT IGNORE INTO usuario(nome, email, senha)
-
-VALUES 	('Carlos Piloto', 'carlospiloto10k@gmail.com', ''),
-          ('Namo do Batata', 'giovanapirath@gmail.com', ''),
-          ('Namo da Gigica', 'gustavosilveiraguedes@gmail.com', '');
-
-
-INSERT IGNORE INTO desafio_diario(formula_id, data_desafio)
-
-VALUES 	(1, '2026-05-31'),
-          (2, '2026-06-01'),
-          (3, '2026-06-02'),
-          (4, '2026-06-03');
-

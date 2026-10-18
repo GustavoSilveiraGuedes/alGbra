@@ -132,22 +132,3 @@ INSERT INTO formula(nomePT, aliasPT1, aliasPT2, nomeEN, aliasEN1, aliasEN2, mate
 			('Arranjo Simples', '', '', 'Simple Arrangement', '', '', 'Matemática', 'Análise Combinatória', 3, '3EM', 'XVII', ''),
 
 			('Combinação Simples', '', '', 'Simple Combination', '', '', 'Matemática', 'Análise Combinatória', 3, '3EM', 'XVII', '');
-
-
-INSERT INTO usuario(nome, email, senha)
-
-	VALUES 	('Carlos Piloto', 'carlospiloto10k@gmail.com', ''),
-			('Namo do Batata', 'giovanapirath@gmail.com', ''),
-			('Namo da Gigica', 'gustavosilveiraguedes@gmail.com', '');
-
-
-INSERT INTO desafioDiario(formula_id, dataDesafio)
-
-	VALUES 	(1, '2026-05-31'),
-			(2, '2026-06-01'),
-			(3, '2026-06-02'),
-			(4, '2026-06-03');
-
-
-SELECT * FROM usuario;
-SELECT * FROM formula;
