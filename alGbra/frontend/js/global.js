@@ -99,3 +99,25 @@ async function changeLanguage(lang) {
         console.error('Falha na tradução:', error);
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const linkLoginHeader = document.getElementById("login");
+
+    if (linkLoginHeader) {
+        linkLoginHeader.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const usuarioLogado = localStorage.getItem("usuarioLogado");
+            const paginaDestino = usuarioLogado ? "perfil.html" : "login.html";
+
+            // 1. Lê o caminho relativo configurado no <body> da página atual (ex: "../../" ou "./")
+            const basePath = document.body.getAttribute("data-base-path") || "./";
+
+            // 2. Aponta para a pasta 'html/account/' (ou a estrutura exata onde está o perfil.html)
+            const urlAbsoluta = new URL(`${basePath}html/account/${paginaDestino}`, window.location.href);
+
+            // 3. Redireciona sem errar
+            window.location.href = urlAbsoluta.href;
+        });
+    }
+});

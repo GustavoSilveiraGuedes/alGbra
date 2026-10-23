@@ -1,6 +1,7 @@
 package br.com.algbra.controller;
 
 import br.com.algbra.dto.CadastroDTO;
+import br.com.algbra.dto.GoogleLoginDTO;
 import br.com.algbra.dto.LoginDTO;
 import br.com.algbra.dto.UsuarioRespostaDTO;
 import br.com.algbra.service.UsuarioService;
@@ -26,6 +27,12 @@ public class UsuarioController {
     @PostMapping("/login")
     public ResponseEntity<UsuarioRespostaDTO> login(@RequestBody LoginDTO dto) {
         UsuarioRespostaDTO usuarioLogado = usuarioService.autenticar(dto);
+        return ResponseEntity.ok(usuarioLogado);
+    }
+
+    @PostMapping("/google")
+    public ResponseEntity<UsuarioRespostaDTO> loginGoogle(@RequestBody GoogleLoginDTO dto) {
+        UsuarioRespostaDTO usuarioLogado = usuarioService.autenticarGoogle(dto);
         return ResponseEntity.ok(usuarioLogado);
     }
 }

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/global.css" rel="stylesheet">
+    <link href="../../css/account.css" rel="stylesheet">
+    <link href="../../img/visual/icon.svg" rel="shortcut icon" type="image/x-icon">
+    <title>alGbra - Perfil</title>
+</head>
+
+<body data-base-path="../../" data-i18n-path="account">
+    <header>
+    <nav>
+        <a href="../../../index.html" id="homeSvg">
+            <svg class="bi bi-amd" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="m.334 0 4.358 4.359h7.15v7.15l4.358 4.358V0zM.2 9.72l4.487-4.488v6.281h6.28L6.48 16H.2z" />
+            </svg>
+        </a>
+        <a href="../../../index.html" data-i18n="homeA">Home</a>
+        <a href="../../../index.html" data-i18n="mathA">Math</a>
+        <a href="#" id="login">
+            <svg class="bi bi-person-circle" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" fill-rule="evenodd" />
+            </svg>
+        </a>
+        <a href="../../../index.html" data-i18n="physA">Phys</a>
+        <a href="../browse/about.html" data-i18n="aboutA">About</a>
+    </nav>
+</header>
+
+
+    <main class="container my-5">
+    <div class="language-container hiddenScroll" data-animation="intro1">
+        <button id="language-toggle" class="lang-button">EN-US</button>
+    </div>
+
+        <div class="row g-4">
+            <!-- Coluna Esquerda: Avatar e Painel Admin -->
+            <div class="col-md-5 d-flex flex-column align-items-center text-center">
+                <div class="avatar-container mb-3">
+                    <svg class="bi bi-person-circle" width="120" height="120" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 0 8 1" fill-rule="evenodd" />
+                    </svg>
+                </div>
+
+                <!-- Bloco de Modo de Administrador (visível no futuro com chave_adm) -->
+                <div id="painelAdmin" class="w-100 border p-3 rounded text-start" style="display: none;">
+                    <h5>Modo de administrador</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-decoration-none text-light">Relatórios</a></li>
+                        <li><a href="#" class="text-decoration-none text-light">Adicionar Fórmula</a></li>
+                        <li><a href="#" class="text-decoration-none text-light">Adicionar Matéria</a></li>
+                        <li><a href="#" class="text-decoration-none text-light">Etc...</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Coluna Direita: Informações do Usuário e Ações -->
+            <div class="col-md-7 d-flex flex-column justify-content-between">
+                <div class="user-info mb-4">
+                    <div class="mb-3">
+                        <label class="fw-bold">Nome:</label>
+                        <span id="lblNome" class="ms-2">Carregando...</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="fw-bold">Email:</label>
+                        <span id="lblEmail" class="ms-2">Carregando...</span>
+                    </div>
+
+                    <div class="mb-3 d-flex align-items-center">
+                        <label class="fw-bold me-2">Senha:</label>
+                        <span id="lblSenha">••••••••</span>
+                    </div>
+                </div>
+
+                <div class="user-actions d-flex flex-column gap-2">
+                    <button id="btnAlterarSenha" class="btn btn-outline-light w-100">Alterar senha</button>
+                    <button id="btnExcluirConta" class="btn btn-outline-danger w-100">Excluir conta</button>
+                    <button id="btnSair" class="btn btn-secondary w-100 mt-2">Sair da conta</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <p data-i18n="contactEmailP">Contact Email: gustavosilveiraguedes@gmail.com</p>
+            <p data-i18n="contactNumberP">Contact Number: +99 (99) 99999-9999</p>
+        </div>
+        <div>
+            <a href="https://github.com/GustavoSilveiraGuedes" target="_blank"><img src="../../img/visual/gitHub.svg"></a>
+            <a href="https://www.instagram.com/elbatatonn/" target="_blank"><img src="../../img/visual/instagram.svg"></a>
+        </div>
+    </footer>
+
+    <script src="../../js/global.js"></script>
+    <script src="../../js/perfil.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

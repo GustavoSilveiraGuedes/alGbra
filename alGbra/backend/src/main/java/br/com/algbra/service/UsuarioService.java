@@ -8,7 +8,13 @@ import br.com.algbra.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import br.com.algbra.dto.GoogleLoginDTO;
+import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
+import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.gson.GsonFactory;
 
+import java.util.Collections;
 import java.util.Optional;
 
 @Service
@@ -19,6 +25,9 @@ public class UsuarioService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    // Substitua pelo seu Client ID do Google Cloud Console
+    private static final String CLIENT_ID = "154431325898-rspn81ndile98j638331324b7ugpmkhs.apps.googleusercontent.com";
 
     public UsuarioRespostaDTO cadastrar(CadastroDTO dto) {
         // 1. Validações dos campos obrigatórios e formatos
@@ -71,5 +80,45 @@ public class UsuarioService {
         }
 
         return new UsuarioRespostaDTO(usuario.getId(), usuario.getNome(), usuario.getEmail());
+    }
+
+    public UsuarioRespostaDTO autenticarGoogle(GoogleLoginDTO dto) {
+        try {
+            GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(
+                    new NetHttpTransport(), new GsonFactory())
+                    .setAudience(Collections.singletonList(CLIENT_ID))
+                    .build();
+
+            // Valida a assinatura do token diretamente nos servidores do Google
+            GoogleIdToken idToken = verifier.verify(dto.getToken());
+
+            if (idToken == null) {
+                throw new IllegalArgumentException("Token do Google inválido.");
+            }
+
+            GoogleIdToken.Payload payload = idToken.getPayload();
+            String email = payload.getEmail();
+            String nome = (String) payload.get("name");
+
+            // Procura se o usuário já existe na base de dados
+            Optional<UsuarioEntity> usuarioOpt = usuarioRepository.findByEmail(email);
+
+            UsuarioEntity usuario;
+            if (usuarioOpt.isPresent()) {
+                usuario = usuarioOpt.get();
+            } else {
+                // Se não existir, cadastra automaticamente
+                usuario = new UsuarioEntity();
+                usuario.setNome(nome);
+                usuario.setEmail(email);
+                usuario.setSenha(null); // Contas via Google não possuem senha local
+                usuario = usuarioRepository.save(usuario);
+            }
+
+            return new UsuarioRespostaDTO(usuario.getId(), usuario.getNome(), usuario.getEmail());
+
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Falha ao autenticar com o Google: " + e.getMessage());
+        }
     }
 }
