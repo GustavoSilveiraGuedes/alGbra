@@ -121,3 +121,85 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+
+
+window.onload = function () {
+    // 1. Inicializa o botão nativo do Google
+    google.accounts.id.initialize({
+        client_id: "154431325898-rspn81ndile98j638331324b7ugpmkhs.apps.googleusercontent.com",
+        callback: handleCredentialResponse
+    });
+
+    // 2. Renderiza o botão oficial do Google dentro da div
+    google.accounts.id.renderButton(
+        document.getElementById("buttonDiv"),
+        { theme: "outline", size: "large" }
+    );
+};
+
+// 3. Callback chamado automaticamente quando o usuário faz login no pop-up do Google
+async function handleCredentialResponse(response) {
+    console.log("Encoded JWT ID token: " + response.credential);
+
+    try {
+        const apiResponse = await fetch("http://localhost:8080/api/usuarios/google", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ token: response.credential })
+        });
+
+        const data = await apiResponse.json();
+
+        if (apiResponse.ok) {
+            // Guarda a sessão e redireciona
+            localStorage.setItem("usuarioLogado", JSON.stringify(data));
+            mostrarToast(`Bem-vindo(a), ${data.nome}!`, "sucesso");
+
+            // Aguarda 1.2 segundo para a animação subir e depois redireciona para a raiz
+            setTimeout(() => {
+                // Sobe de account -> html -> frontend -> raiz do site (index.html)
+                window.location.href = "../../../index.html";
+            }, 1200);
+        } else {
+            alert(`Erro no login com Google: ${data.mensagem}`);
+        }
+    } catch (error) {
+        console.error("Erro na comunicação com o servidor:", error);
+        alert("Não foi possível conectar ao backend.");
+    }
+}
+
+
+// Função reutilizável para exibir avisos no canto da tela (Toasts)
+function mostrarToast(mensagem, tipo = "sucesso", tempo = 3000) {
+    // Busca ou cria o container de toasts no body
+    let container = document.getElementById("toast-container");
+    if (!container) {
+        container = document.createElement("div");
+        container.id = "toast-container";
+        document.body.appendChild(container);
+    }
+
+    // Cria o elemento da mensagem
+    const toast = document.createElement("div");
+    toast.className = `toast-mensagem ${tipo}`;
+    toast.textContent = mensagem;
+
+    container.appendChild(toast);
+
+    // Força o navegador a processar o elemento antes de aplicar a animação de subir
+    setTimeout(() => {
+        toast.classList.add("mostrar");
+    }, 10);
+
+    // Remove o toast automaticamente após o tempo definido (padrão: 3 segundos)
+    setTimeout(() => {
+        toast.classList.remove("mostrar");
+        setTimeout(() => {
+            toast.remove();
+        }, 300); // Aguarda o fim da transição de opacidade/deslocamento
+    }, tempo);
+}

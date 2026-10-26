@@ -33,43 +33,56 @@
 
 
     <main class="container my-5">
-    <div class="language-container hiddenScroll" data-animation="intro1">
-        <button id="language-toggle" class="lang-button">EN-US</button>
-    </div>
+        <!-- Botão de idioma com margem padronizada (mb-5 descola do resto da tela) -->
+        <div class="language-container text-center mb-5 hiddenScroll" data-animation="intro1">
+            <button id="language-toggle" class="lang-button">EN-US</button>
+        </div>
 
-        <div class="row g-4">
-            <!-- Coluna Esquerda: Avatar e Painel Admin -->
-            <div class="col-md-5 d-flex flex-column align-items-center text-center">
-                <div class="avatar-container mb-3">
-                    <svg class="bi bi-person-circle" width="120" height="120" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <div class="row g-4 align-items-stretch">
+            <!-- Coluna Esquerda: Avatar, Trocar Foto, Modo Admin e Painel -->
+            <div class="col-md-5 d-flex flex-column align-items-center text-center border-end border-white pe-md-4">
+                <!-- Container do Avatar / Foto de Perfil -->
+                <div class="avatar-container mb-2 position-relative">
+                    <img id="imgPerfil" src="../../img/visual/default-user.svg" alt="Foto de Perfil" class="rounded-circle border border-secondary" width="120" height="120" style="object-fit: cover; display: none;">
+
+                    <svg id="svgPerfilPadrao" class="bi bi-person-circle" width="120" height="120" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
                         <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 0 8 1" fill-rule="evenodd" />
                     </svg>
                 </div>
 
-                <!-- Bloco de Modo de Administrador (visível no futuro com chave_adm) -->
-                <div id="painelAdmin" class="w-100 border p-3 rounded text-start" style="display: none;">
-                    <h5>Modo de administrador</h5>
-                    <ul class="list-unstyled mb-0">
-                        <li><a href="#" class="text-decoration-none text-light">Relatórios</a></li>
-                        <li><a href="#" class="text-decoration-none text-light">Adicionar Fórmula</a></li>
-                        <li><a href="#" class="text-decoration-none text-light">Adicionar Matéria</a></li>
-                        <li><a href="#" class="text-decoration-none text-light">Etc...</a></li>
+                <!-- Botão para alterar foto (futuro upload / foto_url) -->
+                <button id="btnAlterarFoto" class="btn btn-sm btn-outline-light mb-4">
+                    Alterar foto
+                </button>
+
+                <!-- Botão para ativar/acessar modo Admin (layout por enquanto) -->
+                <button id="btnAtivarAdmin" class="btn btn-outline-warning w-75 mb-3">
+                    Modo de Administrador
+                </button>
+
+                <!-- Bloco do Painel do Administrador (oculto por padrão) -->
+                <div id="painelAdmin" class="w-100 border border-secondary p-3 rounded text-start mt-2" style="display: none;">
+                    <h6 class="fw-bold mb-2 text-warning">Painel do Administrador</h6>
+                    <ul class="list-unstyled mb-0 d-flex flex-column gap-1">
+                        <li><a href="#" class="text-decoration-none text-light small">► Relatórios</a></li>
+                        <li><a href="#" class="text-decoration-none text-light small">► Adicionar Fórmula</a></li>
+                        <li><a href="#" class="text-decoration-none text-light small">► Adicionar Matéria</a></li>
                     </ul>
                 </div>
             </div>
 
             <!-- Coluna Direita: Informações do Usuário e Ações -->
-            <div class="col-md-7 d-flex flex-column justify-content-between">
+            <div class="col-md-7 d-flex flex-column justify-content-between ps-md-4">
                 <div class="user-info mb-4">
                     <div class="mb-3">
-                        <label class="fw-bold">Nome:</label>
-                        <span id="lblNome" class="ms-2">Carregando...</span>
+                        <label class="fw-bold me-2">Nome:</label>
+                        <span id="lblNome">Carregando...</span>
                     </div>
 
                     <div class="mb-3">
-                        <label class="fw-bold">Email:</label>
-                        <span id="lblEmail" class="ms-2">Carregando...</span>
+                        <label class="fw-bold me-2">Email:</label>
+                        <span id="lblEmail">Carregando...</span>
                     </div>
 
                     <div class="mb-3 d-flex align-items-center">
@@ -78,7 +91,7 @@
                     </div>
                 </div>
 
-                <div class="user-actions d-flex flex-column gap-2">
+                <div class="user-actions d-flex flex-column gap-2 w-100">
                     <button id="btnAlterarSenha" class="btn btn-outline-light w-100">Alterar senha</button>
                     <button id="btnExcluirConta" class="btn btn-outline-danger w-100">Excluir conta</button>
                     <button id="btnSair" class="btn btn-secondary w-100 mt-2">Sair da conta</button>

@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Verifica se existe um usuário logado no localStorage
     const usuarioSalvo = localStorage.getItem("usuarioLogado");
 
     if (!usuarioSalvo) {
@@ -10,32 +9,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const usuario = JSON.parse(usuarioSalvo);
 
-    // 2. Preenche os dados do perfil na tela
+    // Preenche os dados do usuário
     document.getElementById("lblNome").textContent = usuario.nome || "Não informado";
     document.getElementById("lblEmail").textContent = usuario.email || "Não informado";
 
-    // 3. Verifica se tem permissão de Admin (deixaremos preparado para quando criarmos chave_adm)
-    if (usuario.chaveAdm) {
-        document.getElementById("painelAdmin").style.display = "block";
+    // Se no futuro houver fotoUrl gravada no localStorage
+    if (usuario.fotoUrl) {
+        const img = document.getElementById("imgPerfil");
+        const svgPadrao = document.getElementById("svgPerfilPadrao");
+        img.src = usuario.fotoUrl;
+        img.style.display = "block";
+        svgPadrao.style.display = "none";
     }
 
-    // 4. Ação do Botão "Sair"
-    const btnSair = document.getElementById("btnSair");
-    if (btnSair) {
-        btnSair.addEventListener("click", () => {
-            localStorage.removeItem("usuarioLogado");
-            window.location.href = "login.html";
-        });
-    }
-
-    // 5. Botões de Ação (Avisos por enquanto)
-    document.getElementById("btnAlterarSenha").addEventListener("click", () => {
-        alert("Funcionalidade de alterar senha será implementada em breve.");
+    // Botão de alterar foto (apenas aviso por enquanto)
+    document.getElementById("btnAlterarFoto").addEventListener("click", () => {
+        alert("Em breve você poderá fazer upload da sua foto de perfil!");
     });
 
-    document.getElementById("btnExcluirConta").addEventListener("click", () => {
-        if (confirm("Tem certeza que deseja excluir sua conta? Esta ação não pode ser desfeita.")) {
-            alert("Funcionalidade de exclusão de conta será conectada ao backend.");
+    // Botão Modo Admin (Layout / alternância visual por enquanto)
+    const btnAdmin = document.getElementById("btnAtivarAdmin");
+    const painelAdmin = document.getElementById("painelAdmin");
+
+    btnAdmin.addEventListener("click", () => {
+        if (painelAdmin.style.display === "none" || painelAdmin.style.display === "") {
+            painelAdmin.style.display = "block";
+            btnAdmin.classList.replace("btn-outline-warning", "btn-warning");
+            btnAdmin.textContent = "Ocultar Painel ADM";
+        } else {
+            painelAdmin.style.display = "none";
+            btnAdmin.classList.replace("btn-warning", "btn-outline-warning");
+            btnAdmin.textContent = "Modo de Administrador";
         }
+    });
+
+    // Ação do Botão "Sair"
+    document.getElementById("btnSair").addEventListener("click", () => {
+        localStorage.removeItem("usuarioLogado");
+        window.location.href = "login.html";
     });
 });

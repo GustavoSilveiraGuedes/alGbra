@@ -93,6 +93,58 @@ h1, h2, h3, option {
     }
 }
 
+/* Container fixo no canto inferior direito */
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilo do balão de notificação (Toast) */
+.toast-mensagem {
+    min-width: 250px;
+    padding: 12px 20px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    background-color: #333;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Tipos de notificação */
+.toast-mensagem.sucesso {
+    background-color: #198754; /* Verde */
+    border-left: 5px solid #25c974;
+}
+
+.toast-mensagem.erro {
+    background-color: #dc3545; /* Vermelho */
+    border-left: 5px solid #ff6b6b;
+}
+
+.toast-mensagem.alerta {
+    background-color: #ffc107; /* Amarelo */
+    color: #000;
+    border-left: 5px solid #cca000;
+}
+
+/* Classe ativada via JS para fazer subir e aparecer */
+.toast-mensagem.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 @media (max-width: 1299px) {
 

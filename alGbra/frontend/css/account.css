@@ -1,6 +1,6 @@
 @media (max-width: 1299px) {
 
-    section#login{
+    section#form{
         border: 1px solid var(--color1);
         border-radius: 10px;
         background-color: rgba(0, 0, 0, 0.4);
@@ -9,7 +9,7 @@
         width: 60vw;
     }
 
-     section#login form{
+     section#form form{
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
@@ -25,32 +25,32 @@
         width: 100%;
     }
 
-    section#login input[type="submit"]{
+    section#form input[type="submit"]{
         width: 100px;
         padding: 10px;
     }
 
-    section#login div#rememberMe{
+    section#form div#rememberMe{
         display: flex;
         flex-flow: row nowrap;
         gap: 5px;
         margin-bottom: 30px;
     }
 
-    section#login input[type="checkbox"]{
+    section#form input[type="checkbox"]{
         display: inline-block;
         width: 40px;
     }
 
-    section#login label{
+    section#form label{
         display: inline-block;
     }
 
-    section#login h1{
+    section#form h1{
         font-size: 3em;
     }
 
-    section#login > div{
+    section#form > div{
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
@@ -58,7 +58,7 @@
         width: 100%;
     }
 
-    section#login div button, section#login div a{
+    section#form div button, section#form div a{
         border: 1px solid var(--color5);
         background-color: transparent;
         width: 100px;
@@ -76,7 +76,7 @@
 
 @media (min-width: 1300px) and (max-width: 1799px) {
     
-    section#login{
+    section#form{
         border: 1px solid var(--color1);
         border-radius: 10px;
         background-color: rgba(0, 0, 0, 0.4);
@@ -85,7 +85,7 @@
         width: 60vw;
     }
 
-    section#login form{
+    section#form form{
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
@@ -103,7 +103,7 @@
         height: 60px;
     }
 
-    section#login div#rememberMe{
+    section#form div#rememberMe{
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
@@ -111,30 +111,30 @@
         margin-bottom: 30px;
     }
 
-    section#login input[type="checkbox"]{
+    section#form input[type="checkbox"]{
         display: inline-block;
         width: 30px;
     }
 
-    section#login label{
+    section#form label{
         display: inline-block;
     }
 
-    section#login input[type="submit"]{
+    section#form input[type="submit"]{
         width: 150px;
         height: 50px;
         transition: .3s;
     }
 
-    section#login input[type="submit"]:hover{
+    section#form input[type="submit"]:hover{
         transform: translateY(-2px);
     }
 
-    section#login h1{
+    section#form h1{
         font-size: 4em;
     }
 
-    section#login > div{
+    section#form > div{
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
@@ -142,7 +142,7 @@
         width: 100%;
     }
 
-    section#login div button, section#login div a{
+    section#form div button, section#form div a{
         border: 1px solid var(--color5);
         background-color: transparent;
         width: 100px;
@@ -154,7 +154,7 @@
         transition: .3s;  
     }
 
-    section#login div button:hover, section#login div a:hover{
+    section#form div button:hover, section#form div a:hover{
         transform: translateY(-2px);
     }
 
@@ -167,7 +167,7 @@
 
 @media (min-width: 1800px) {
     
-    section#login{
+    section#form{
         border: 1px solid var(--color1);
         border-radius: 10px;
         background-color: rgba(0, 0, 0, 0.4);
@@ -176,7 +176,7 @@
         width: 60vw;
     }
 
-    section#login form{
+    section#form form{
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
@@ -194,7 +194,7 @@
         height: 60px;
     }
 
-    section#login div#rememberMe{
+    section#form div#rememberMe{
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
@@ -202,31 +202,31 @@
         margin-bottom: 30px;
     }
 
-    section#login input[type="checkbox"]{
+    section#form input[type="checkbox"]{
         display: inline-block;
         width: 40px;
     }
 
-    section#login label{
+    section#form label{
         display: inline-block;
         font-size: 1.5em;
     }
 
-    section#login input[type="submit"]{
+    section#form input[type="submit"]{
         width: 200px;
         height: 70px;
         transition: .3s;
     }
 
-    section#login input[type="submit"]:hover{
+    section#form input[type="submit"]:hover{
         transform: translateY(-2px);
     }
 
-    section#login h1{
+    section#form h1{
         font-size: 6em;
     }
 
-    section#login > div{
+    section#form > div{
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
@@ -234,7 +234,7 @@
         width: 100%;
     }
 
-    section#login div button, section#login div a{
+    section#form div button, section#form div a{
         border: 1px solid var(--color5);
         background-color: transparent;
         width: 120px;
@@ -246,7 +246,7 @@
         transition: .3s;  
     }
 
-    section#login div button:hover, section#login div a:hover{
+    section#form div button:hover, section#form div a:hover{
         transform: translateY(-2px);
     }
 

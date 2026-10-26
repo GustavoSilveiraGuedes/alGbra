@@ -5,22 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec724ed2-bb48-47b4-97cf-7bdd89099f0a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/dto/GoogleLoginDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/html/account/perfil.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/js/cadastro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/js/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/js/perfil.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/controller/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/service/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/controller/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/controller/UsuarioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/service/UsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/service/UsuarioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/css/account.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/css/account.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/css/global.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/html/account/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/html/account/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/html/account/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/html/account/perfil.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/html/account/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/html/account/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/html/browse/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/html/browse/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/js/cadastro.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/cadastro.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/js/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/loginRegister.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/js/perfil.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/perfil.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
