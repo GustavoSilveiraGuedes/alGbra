@@ -6,15 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ec724ed2-bb48-47b4-97cf-7bdd89099f0a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/css/account.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/css/account.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/css/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/html/account/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/html/account/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/html/account/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/html/account/perfil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/html/account/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/html/account/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/cadastro.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/cadastro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/js/perfil.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/perfil.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
