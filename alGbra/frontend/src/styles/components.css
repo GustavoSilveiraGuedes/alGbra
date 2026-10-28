@@ -1,0 +1,485 @@
+:root {
+  --bg-main: #0b0c10;
+  --bg-card: #12131a;
+  --bg-card-hover: #181924;
+  --purple-primary: #6a5aca;
+  --purple-accent: #8b7beb;
+  --purple-border: #3d3566;
+  --purple-glow: rgba(106, 90, 204, 0.25);
+  --text-main: #f8f9fa;
+  --text-muted: #a0a5b5;
+  --font-code: "Fira Code", monospace;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --transition-fast: 0.2s ease-in-out;
+}
+
+/* Animações */
+.fade-in {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in-down {
+  animation: fadeInDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+/* Hero Section */
+.hero-section {
+  max-width: 650px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-domain {
+  color: var(--purple-accent);
+  opacity: 0.6;
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-family: var(--font-code);
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+}
+
+.hero-description {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 580px;
+  margin-bottom: 70px;
+}
+
+/* Bloco Desafie-se */
+.challenge-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px 0 90px;
+}
+
+.challenge-title {
+  font-family: var(--font-code);
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.challenge-title::after,
+.formula-block-title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--purple-primary);
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+.challenge-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+}
+
+.btn-challenge {
+  background-color: var(--purple-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 14px 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn-challenge:hover {
+  background-color: var(--purple-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--purple-glow);
+}
+
+/* Blocos e Accordion de Fórmulas */
+.formulas-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.formula-block-title {
+  font-family: var(--font-code);
+  font-size: 2rem;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.formula-accordion-header {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--purple-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  padding: 14px 22px;
+  font-family: var(--font-code);
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.formula-accordion-header:hover,
+.formula-accordion-header.active {
+  border-color: var(--purple-primary);
+  background-color: var(--bg-card-hover);
+}
+
+.formula-accordion-header.active {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.formula-accordion-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.formula-accordion-collapse.open {
+  grid-template-rows: 1fr;
+}
+
+.formula-accordion-body {
+  min-height: 0;
+  border: 1px solid var(--purple-border);
+  border-top: none;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.formula-accordion-collapse.open .formula-accordion-body {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.chevron-icon {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.chevron-icon.rotate-180 {
+  transform: rotate(180deg);
+}
+
+/* Grid e Cards de Fórmulas */
+.formulas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .formulas-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.formula-card {
+  border: 1px solid var(--purple-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background-color: var(--bg-card);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.formula-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--purple-primary);
+}
+
+.formula-card-img {
+  background: #ffffff;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 110px;
+}
+
+.formula-card-img img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.formula-card-body {
+  padding: 14px;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.formula-card-body h5 {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  font-family: var(--font-code);
+  color: var(--text-main);
+}
+
+.btn-sobre {
+  background: transparent;
+  border: 1px solid var(--purple-border);
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-sobre:hover {
+  border-color: var(--purple-primary);
+  color: var(--text-main);
+  background: var(--purple-glow);
+}
+
+/* Footer */
+.main-footer {
+  border-top: 1px solid var(--purple-border);
+  padding: 24px 0;
+  margin-top: auto;
+  background-color: var(--bg-main);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copy {
+  color: var(--text-muted);
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-icon-link {
+  color: var(--text-muted);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--purple-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.footer-icon-link:hover {
+  color: #ffffff;
+  border-color: var(--purple-primary);
+  background-color: rgba(106, 90, 204, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px var(--purple-glow);
+}
+
+/* Página Sobre (About) */
+.about-wrapper {
+  max-width: 850px;
+}
+
+.about-title {
+  font-family: var(--font-code);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.about-content-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-avatar-wrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-avatar-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--purple-primary);
+  box-shadow: 0 0 22px var(--purple-glow);
+}
+
+.about-text-content {
+  flex: 1;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.about-text-content p {
+  margin-bottom: 20px;
+}
+
+.about-text-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Seção Linguagens Usadas */
+.tech-stack-title {
+  font-family: var(--font-code);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.tech-stack-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--purple-border);
+  border-radius: var(--radius-md);
+  padding: 24px 32px;
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.tech-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tech-column-title {
+  font-family: var(--font-code);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.tech-badges-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-badge {
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border: 1px solid var(--purple-border);
+  border-radius: 20px;
+  padding: 4px 16px;
+  background: transparent;
+  transition: all var(--transition-fast);
+}
+
+.tech-badge:hover {
+  border-color: var(--purple-primary);
+  color: #ffffff;
+  background-color: rgba(106, 90, 204, 0.1);
+}
+
+.tech-divider {
+  width: 1px;
+  background-color: var(--purple-border);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .about-content-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .about-avatar-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .tech-stack-card {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .tech-divider {
+    width: 100%;
+    height: 1px;
+  }
+}

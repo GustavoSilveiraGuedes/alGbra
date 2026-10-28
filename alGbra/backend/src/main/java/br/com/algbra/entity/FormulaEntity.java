@@ -2,15 +2,17 @@ package br.com.algbra.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "formula")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class FormulaEntity {
@@ -37,14 +39,12 @@ public class FormulaEntity {
     @Column(name = "alias_en2", length = 100)
     private String aliasEN2;
 
-    @Column(name = "materia", nullable = false, length = 100)
-    private String materia;
 
-    @Column(name = "conteudo", nullable = false, length = 100)
-    private String conteudo;
+    @Column(name = "imagem_url", length = 255)
+    private String imagemUrl;
 
     @Column(name = "numero_variaveis")
-    private Integer numeroVariaveis; // Pode ser nulo (ex: Permutação com Repetição)
+    private Integer numeroVariaveis;
 
     @Column(name = "periodo_ensinado", nullable = false, length = 3)
     private String periodoEnsinado;
@@ -54,6 +54,11 @@ public class FormulaEntity {
 
     @Column(name = "autor", length = 100)
     private String autor;
+
+    // Relacionamento com Conteudo (que por sua vez já tem a Materia)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "conteudo_id", nullable = false)
+    private ConteudoEntity conteudo;
 
     @OneToMany(mappedBy = "formula")
     private Set<DesafioDiarioEntity> desafioDiarios = new HashSet<>();
