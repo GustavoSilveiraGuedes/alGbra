@@ -15,4 +15,6 @@ public class FormulaInputDTO {
     private String periodoEnsinado;
     private String seculo;
     private String autor;
+    private String descricao;
+    private String videoUrl;
 }

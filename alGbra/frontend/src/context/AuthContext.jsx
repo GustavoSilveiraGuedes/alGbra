@@ -1,22 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function parseJwt(token) {
-  try {
-    const base64Url = token.split(".")[1];
-    const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-    const jsonPayload = decodeURIComponent(
-      atob(base64)
-        .split("")
-        .map((c) => "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2))
-        .join("")
-    );
-    return JSON.parse(jsonPayload);
-  } catch {
-    return null;
-  }
-}
-
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
@@ -53,14 +37,13 @@ export function AuthProvider({ children }) {
         throw new Error(errorData.mensagem || "Credenciais inválidas");
       }
 
-      const data = await response.json();
-      const usuarioLogado = data.usuario || data;
+      const usuarioLogado = await response.json();
 
-      localStorage.setItem("@alGbra:token", data.token || "token-session");
+      localStorage.setItem("@alGbra:token", "token-session");
       localStorage.setItem("@alGbra:user", JSON.stringify(usuarioLogado));
-      
+
       setUser(usuarioLogado);
-      navigate("/perfil");
+      navigate("/profile");
       return { success: true };
     } catch (error) {
       return { success: false, message: error.message };
@@ -80,8 +63,8 @@ export function AuthProvider({ children }) {
         throw new Error(errorData.mensagem || "Erro ao realizar cadastro");
       }
 
-      navigate("/login");
-      return { success: true };
+      // Após cadastrar com sucesso, realiza o login automático
+      return await login(email, senha);
     } catch (error) {
       return { success: false, message: error.message };
     }
@@ -90,34 +73,24 @@ export function AuthProvider({ children }) {
   const handleGoogleCallback = async (credentialResponse) => {
     try {
       const tokenGoogle = credentialResponse.credential;
-      const googlePayload = parseJwt(tokenGoogle);
 
       const response = await fetch("http://localhost:8080/api/usuarios/google", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-          idToken: tokenGoogle,
-          token: tokenGoogle 
-        }),
+        body: JSON.stringify({ token: tokenGoogle }),
       });
 
       if (!response.ok) {
         throw new Error("Falha na autenticação via Google no servidor");
       }
 
-      const data = await response.json();
-      const usuarioLogado = data.usuario || data;
+      const usuarioLogado = await response.json();
 
-      const usuarioFinal = {
-        ...usuarioLogado,
-        picture: usuarioLogado.picture || usuarioLogado.fotoUrl || googlePayload?.picture
-      };
+      localStorage.setItem("@alGbra:token", tokenGoogle);
+      localStorage.setItem("@alGbra:user", JSON.stringify(usuarioLogado));
 
-      localStorage.setItem("@alGbra:token", data.token || tokenGoogle);
-      localStorage.setItem("@alGbra:user", JSON.stringify(usuarioFinal));
-      
-      setUser(usuarioFinal);
-      navigate("/perfil");
+      setUser(usuarioLogado);
+      navigate("/profile");
     } catch (error) {
       return { success: false, message: error.message };
     }
@@ -131,18 +104,18 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider
-      value={{
-        user,
-        loading,
-        login,
-        register,
-        handleGoogleCallback,
-        logout,
-      }}
-    >
-      {children}
-    </AuthContext.Provider>
+      <AuthContext.Provider
+          value={{
+            user,
+            loading,
+            login,
+            register,
+            handleGoogleCallback,
+            logout,
+          }}
+      >
+        {children}
+      </AuthContext.Provider>
   );
 }
 

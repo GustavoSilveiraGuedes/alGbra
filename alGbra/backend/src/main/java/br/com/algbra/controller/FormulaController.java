@@ -26,6 +26,11 @@ public class FormulaController {
         return ResponseEntity.ok(formulaService.listarTodas());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<FormulaDTO> buscarPorId(@PathVariable Integer id) {
+        return ResponseEntity.ok(formulaService.buscarPorId(id));
+    }
+
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<FormulaDTO> cadastrarFormula(
             @ModelAttribute FormulaInputDTO input,

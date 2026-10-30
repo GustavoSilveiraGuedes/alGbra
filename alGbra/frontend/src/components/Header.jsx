@@ -15,58 +15,53 @@ export function Header() {
   const handleUserClick = (e) => {
     e.preventDefault();
     if (user) {
-      navigate("/perfil");
+      navigate("/profile");
     } else {
       navigate("/login");
     }
   };
 
-  const avatarUrl = user?.picture || user?.fotoUrl || user?.foto || user?.avatar;
+  const avatarUrl = user?.fotoUrl;
 
   return (
-    <>
-      <header className="main-header">
-        <nav className="main-nav">
-          {/* Logo Desktop */}
-          <Link to="/" className="nav-logo-desktop">
-            <Sigma size={32} />
-          </Link>
+      <>
+        <header className="main-header">
+          <nav className="main-nav">
+            <Link to="/" className="nav-logo-desktop">
+              <Sigma size={32} />
+            </Link>
 
-          {/* Links Centrais */}
-          <div className="nav-center-links">
-            <Link to="/" className="nav-link-mobile-home">Início</Link>
-            <Link to="/">Math</Link>
-            
-            {/* Foto / Ícone Mobile */}
-            <a href="#" onClick={handleUserClick} className="nav-user-mobile">
+            <div className="nav-center-links">
+              <Link to="/" className="nav-link-mobile-home">Início</Link>
+              <Link to="/">Math</Link>
+
+              <a href="#" onClick={handleUserClick} className="nav-user-mobile">
+                {avatarUrl ? (
+                    <img src={avatarUrl} alt={user?.nome || "Perfil"} className="nav-avatar-img" />
+                ) : (
+                    <UserCircle size={30} />
+                )}
+              </a>
+
+              <Link to="/">Phys</Link>
+              <Link to="/about">About</Link>
+            </div>
+
+            <a href="#" onClick={handleUserClick} className="nav-user-desktop">
               {avatarUrl ? (
-                <img src={avatarUrl} alt={user?.nome || "Perfil"} className="nav-avatar-img" />
+                  <img src={avatarUrl} alt={user?.nome || "Perfil"} className="nav-avatar-img" />
               ) : (
-                <UserCircle size={30} />
+                  <UserCircle size={32} />
               )}
             </a>
+          </nav>
+        </header>
 
-            <Link to="/">Phys</Link>
-            <Link to="/about">About</Link>
-          </div>
-
-          {/* Foto / Ícone Desktop */}
-          <a href="#" onClick={handleUserClick} className="nav-user-desktop">
-            {avatarUrl ? (
-              <img src={avatarUrl} alt={user?.nome || "Perfil"} className="nav-avatar-img" />
-            ) : (
-              <UserCircle size={32} />
-            )}
-          </a>
-        </nav>
-      </header>
-
-      {/* Botão Flutuante de Idioma */}
-      <div className="lang-selector-container">
-        <button onClick={toggleLanguage} className="btn-lang">
-          {lang}
-        </button>
-      </div>
-    </>
+        <div className="lang-selector-container">
+          <button onClick={toggleLanguage} className="btn-lang">
+            {lang}
+          </button>
+        </div>
+      </>
   );
 }

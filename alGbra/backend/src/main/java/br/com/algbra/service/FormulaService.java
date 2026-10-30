@@ -31,6 +31,13 @@ public class FormulaService {
                 .toList();
     }
 
+    @Transactional(readOnly = true)
+    public FormulaDTO buscarPorId(Integer id) {
+        FormulaEntity entity = formulaRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Fórmula não encontrada com o ID: " + id));
+        return converterParaDto(entity);
+    }
+
     @Transactional
     public FormulaDTO cadastrarFormula(FormulaInputDTO input, MultipartFile imagem) throws IOException {
         if (imagem == null || imagem.isEmpty()) {
@@ -38,7 +45,7 @@ public class FormulaService {
         }
 
         ConteudoEntity conteudo = conteudoRepository.findById(input.getConteudoId())
-                .orElseThrow(() -> new RuntimeException("Conteúdo não encontrado com o ID: " + input.getConteudoId()));
+                .orElseThrow(() -> new IllegalArgumentException("Conteúdo não encontrado com o ID: " + input.getConteudoId()));
 
         String nomePasta = normalizarTexto(conteudo.getNome());
         String nomeArquivo = normalizarTexto(input.getNomePT()) + ".jpg";
@@ -68,6 +75,8 @@ public class FormulaService {
         entity.setPeriodoEnsinado(input.getPeriodoEnsinado());
         entity.setSeculo(input.getSeculo());
         entity.setAutor(input.getAutor());
+        entity.setDescricao(input.getDescricao());
+        entity.setVideoUrl(input.getVideoUrl());
 
         FormulaEntity salva = formulaRepository.save(entity);
         return converterParaDto(salva);
@@ -87,6 +96,8 @@ public class FormulaService {
         dto.setPeriodoEnsinado(entity.getPeriodoEnsinado());
         dto.setSeculo(entity.getSeculo());
         dto.setAutor(entity.getAutor());
+        dto.setDescricao(entity.getDescricao());
+        dto.setVideoUrl(entity.getVideoUrl());
 
         if (entity.getConteudo() != null) {
             dto.setConteudo(entity.getConteudo().getNome());

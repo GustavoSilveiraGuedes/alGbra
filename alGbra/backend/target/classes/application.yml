@@ -22,3 +22,6 @@ spring:
   sql:
     init:
       mode: always
+
+google:
+  client-id: ${CLIENT_ID}

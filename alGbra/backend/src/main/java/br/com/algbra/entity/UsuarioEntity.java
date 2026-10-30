@@ -28,6 +28,9 @@ public class UsuarioEntity {
     @Column(name = "senha", length = 255) // Pode ser nula (ex: login via Google)
     private String senha;
 
+    @Column(name = "foto_url", length = 500)
+    private String fotoUrl;
+
     @OneToMany(mappedBy = "usuario")
     private Set<ParticipacaoEntity> participacoes = new HashSet<>();
 

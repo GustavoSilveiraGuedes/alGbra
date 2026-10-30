@@ -1,7 +1,6 @@
 -- 1. MATÉRIAS --
 INSERT IGNORE INTO materia (nome) VALUES
-('Matemática'),
-('<3');
+('Matemática');
 
 -- 2. CONTEÚDOS --
 INSERT IGNORE INTO conteudo (nome, materia_id) VALUES
@@ -11,7 +10,6 @@ INSERT IGNORE INTO conteudo (nome, materia_id) VALUES
 ('Geometria Espacial', (SELECT id FROM materia WHERE nome = 'Matemática')),
 ('Geometria Analítica', (SELECT id FROM materia WHERE nome = 'Matemática')),
 ('Análise Combinatória', (SELECT id FROM materia WHERE nome = 'Matemática')),
-('Você', (SELECT id FROM materia WHERE nome = '<3')),
 ('Matemática Financeira', (SELECT id FROM materia WHERE nome = 'Matemática'));
 
 -- 3. FÓRMULAS --

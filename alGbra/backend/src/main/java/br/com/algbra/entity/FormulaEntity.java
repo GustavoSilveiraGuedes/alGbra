@@ -39,8 +39,7 @@ public class FormulaEntity {
     @Column(name = "alias_en2", length = 100)
     private String aliasEN2;
 
-
-    @Column(name = "imagem_url", length = 255)
+    @Column(name = "imagem_url", nullable = false, length = 255)
     private String imagemUrl;
 
     @Column(name = "numero_variaveis")
@@ -54,6 +53,12 @@ public class FormulaEntity {
 
     @Column(name = "autor", length = 100)
     private String autor;
+
+    @Column(name = "descricao", nullable = false, length = 2000)
+    private String descricao;
+
+    @Column(name = "video_url", nullable = false, length = 255)
+    private String videoUrl;
 
     // Relacionamento com Conteudo (que por sua vez já tem a Materia)
     @ManyToOne(fetch = FetchType.LAZY)
