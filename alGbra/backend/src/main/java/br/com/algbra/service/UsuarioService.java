@@ -52,6 +52,7 @@ public class UsuarioService {
         novoUsuario.setNome(dto.getNome().trim());
         novoUsuario.setEmail(dto.getEmail().trim());
         novoUsuario.setSenha(passwordEncoder.encode(dto.getSenha()));
+        novoUsuario.setIsAdmin(false); // Define como falso por padrão para novos cadastros
 
         UsuarioEntity usuarioSalvo = usuarioRepository.save(novoUsuario);
 
@@ -59,7 +60,8 @@ public class UsuarioService {
                 usuarioSalvo.getId(),
                 usuarioSalvo.getNome(),
                 usuarioSalvo.getEmail(),
-                usuarioSalvo.getFotoUrl()
+                usuarioSalvo.getFotoUrl(),
+                usuarioSalvo.getIsAdmin() // <-- 5º parâmetro adicionado
         );
     }
 
@@ -87,7 +89,8 @@ public class UsuarioService {
                 usuario.getId(),
                 usuario.getNome(),
                 usuario.getEmail(),
-                usuario.getFotoUrl()
+                usuario.getFotoUrl(),
+                usuario.getIsAdmin() // <-- 5º parâmetro adicionado
         );
     }
 
@@ -125,6 +128,7 @@ public class UsuarioService {
                 usuario.setEmail(email);
                 usuario.setSenha(null);
                 usuario.setFotoUrl(picture);
+                usuario.setIsAdmin(false); // Define como falso por padrão para cadastros via Google
                 usuario = usuarioRepository.save(usuario);
             }
 
@@ -132,7 +136,8 @@ public class UsuarioService {
                     usuario.getId(),
                     usuario.getNome(),
                     usuario.getEmail(),
-                    usuario.getFotoUrl()
+                    usuario.getFotoUrl(),
+                    usuario.getIsAdmin() // <-- 5º parâmetro adicionado
             );
 
         } catch (Exception e) {

@@ -92,9 +92,10 @@ public class FormulaService {
         dto.setAliasEN1(entity.getAliasEN1());
         dto.setAliasEN2(entity.getAliasEN2());
         dto.setImagemUrl(entity.getImagemUrl());
-        dto.setNumeroVariaveis(entity.getNumeroVariaveis());
+
+        dto.setNumeroVariaveis(entity.getNumeroVariaveis()); // <--- ADICIONE ESTA LINHA
         dto.setPeriodoEnsinado(entity.getPeriodoEnsinado());
-        dto.setSeculo(entity.getSeculo());
+        dto.setSeculo(entity.getSeculo()); // <--- ADICIONE ESTA LINHA se estiver faltando também
         dto.setAutor(entity.getAutor());
         dto.setDescricao(entity.getDescricao());
         dto.setVideoUrl(entity.getVideoUrl());

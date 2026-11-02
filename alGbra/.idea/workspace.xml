@@ -5,23 +5,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec724ed2-bb48-47b4-97cf-7bdd89099f0a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/controller/DesafioDiarioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/repository/DesafioDiarioRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/repository/ParticipacaoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/service/ParticipacaoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Modal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/VerifyEmail.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/DailyChallenge.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/FormulaContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/styles/dailyChallenge.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/styles/formulaContainer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/controller/FormulaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/controller/FormulaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/controller/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/dto/FormulaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/dto/FormulaDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/dto/FormulaInputDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/dto/FormulaInputDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/AlgbraApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/AlgbraApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/dto/UsuarioRespostaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/dto/UsuarioRespostaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/entity/ConteudoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/entity/ConteudoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/entity/DesafioDiarioEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/entity/DesafioDiarioEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/entity/FormulaEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/entity/FormulaEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/entity/MateriaEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/entity/MateriaEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/entity/ParticipacaoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/entity/ParticipacaoEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/entity/UsuarioEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/entity/UsuarioEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/service/FormulaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/service/FormulaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/com/algbra/service/UsuarioService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/AlgbraApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/AlgbraApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/controller/FormulaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/controller/FormulaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/dto/FormulaDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/dto/FormulaDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/dto/FormulaInputDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/dto/FormulaInputDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/dto/UsuarioRespostaDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/dto/UsuarioRespostaDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/entity/ConteudoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/entity/ConteudoEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/entity/DesafioDiarioEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/entity/DesafioDiarioEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/entity/FormulaEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/entity/FormulaEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/entity/MateriaEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/entity/MateriaEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/entity/ParticipacaoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/entity/ParticipacaoEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/entity/UsuarioEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/entity/UsuarioEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/service/FormulaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/service/FormulaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/service/UsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/br/com/algbra/service/UsuarioService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/classes/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/FormulaCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/FormulaCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/context/AuthContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/account.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/account.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +68,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -45,61 +82,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="6.40696218031657E-5" />
-      <entry key="MS500" value="0.14498745681317926" />
-      <entry key="S2" value="0.6170674071167713" />
-      <entry key="S5" value="0.8243906228840648" />
-      <entry key="S10" value="0.9079595932000856" />
-      <entry key="S30" value="0.9683300147940127" />
-      <entry key="S60" value="0.9873282015816801" />
-      <entry key="M2" value="1.1067171387686134" />
-      <entry key="M5" value="2.056492451738513" />
-      <entry key="M10" value="4.708480685773521" />
-      <entry key="M15" value="8.859945828173242" />
-      <entry key="M30" value="25.464950465457466" />
-      <entry key="H1" value="56.8822648942707" />
-      <entry key="H2" value="99.19170054811399" />
-      <entry key="H4" value="152.73828068249392" />
-      <entry key="D1" value="271.38817455635984" />
-      <entry key="W1" value="308.1295137441646" />
+      <entry key="MS100" value="1.0049102084942259" />
+      <entry key="MS500" value="1.3453186120359641" />
+      <entry key="S2" value="1.76660759583614" />
+      <entry key="S5" value="1.9225779965540313" />
+      <entry key="S10" value="2.163693511237979" />
+      <entry key="S30" value="2.93306808928675" />
+      <entry key="S60" value="3.389738368791438" />
+      <entry key="M2" value="4.066277319337959" />
+      <entry key="M5" value="6.819995814131349" />
+      <entry key="M10" value="10.726723187213379" />
+      <entry key="M15" value="13.894377737361976" />
+      <entry key="M30" value="21.077751638377578" />
+      <entry key="H1" value="32.50644942503767" />
+      <entry key="H2" value="58.52479206934488" />
+      <entry key="H4" value="114.45497250296013" />
+      <entry key="D1" value="382.28245398753614" />
+      <entry key="W1" value="521.4688331935125" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000249707760442" />
-      <entry key="S5" value="1.0170344546713712" />
-      <entry key="S10" value="1.1717005923422448" />
-      <entry key="S30" value="1.8660667358490777" />
-      <entry key="S60" value="2.3136682582561265" />
-      <entry key="M2" value="2.6463483121750446" />
-      <entry key="M5" value="3.0737746411346945" />
-      <entry key="M10" value="3.4487659808618907" />
-      <entry key="M15" value="3.7801712785258244" />
-      <entry key="M30" value="4.8993321693178675" />
-      <entry key="H1" value="6.719333217692919" />
-      <entry key="H2" value="10.15287834647265" />
-      <entry key="H4" value="18.237885339965892" />
-      <entry key="D1" value="43.02610749963818" />
-      <entry key="W1" value="51.41289899328629" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="6.650482469446837E-116" />
+      <entry key="S60" value="2.5788529367621664E-58" />
+      <entry key="M2" value="1.6058807355349167E-29" />
+      <entry key="M5" value="3.035885015867289E-12" />
+      <entry key="M10" value="1.7426141978474003E-6" />
+      <entry key="M15" value="1.4534588593939274E-4" />
+      <entry key="M30" value="0.01347512131174795" />
+      <entry key="H1" value="0.19109484259905057" />
+      <entry key="H2" value="1.056956105468251" />
+      <entry key="H4" value="4.153132914128854" />
+      <entry key="D1" value="34.81238827255821" />
+      <entry key="W1" value="55.41066458509751" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.016176017051003955" />
-      <entry key="MS500" value="0.4575128429588703" />
-      <entry key="S2" value="1.1859683655581112" />
-      <entry key="S5" value="1.6089128316125778" />
-      <entry key="S10" value="1.9389884337023031" />
-      <entry key="S30" value="2.766159470278353" />
-      <entry key="S60" value="3.2604690728975427" />
-      <entry key="M2" value="3.72973004630775" />
-      <entry key="M5" value="5.117404525456571" />
-      <entry key="M10" value="8.148624806487453" />
-      <entry key="M15" value="12.63293550396046" />
-      <entry key="M30" value="30.35826141119489" />
-      <entry key="H1" value="63.59656094157514" />
-      <entry key="H2" value="109.33940715305302" />
-      <entry key="H4" value="170.96954074178868" />
-      <entry key="D1" value="314.4108531323394" />
-      <entry key="W1" value="359.5418055297344" />
+      <entry key="MS100" value="0.009523461077934997" />
+      <entry key="MS500" value="0.6863555707558028" />
+      <entry key="S2" value="1.5307956413735697" />
+      <entry key="S5" value="1.8205105905106316" />
+      <entry key="S10" value="2.1109594423155813" />
+      <entry key="S30" value="2.914737930348026" />
+      <entry key="S60" value="3.3803928373737806" />
+      <entry key="M2" value="4.061448731474391" />
+      <entry key="M5" value="6.81777888018151" />
+      <entry key="M10" value="10.725404572930712" />
+      <entry key="M15" value="13.89352405640241" />
+      <entry key="M30" value="21.090556727628964" />
+      <entry key="H1" value="32.6968920900189" />
+      <entry key="H2" value="59.5808277846805" />
+      <entry key="H4" value="118.60652892370202" />
+      <entry key="D1" value="417.0921644503129" />
+      <entry key="W1" value="576.8788624052692" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -160,11 +197,6 @@
       <method v="2" />
     </configuration>
     <configuration name="AlgbraApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <envs>
-        <env name="PASSWORD_DATABASE" value="#4T4t4doce" />
-        <env name="USERNAME_DATABASE" value="gustavo" />
-        <env name="CLIENT_ID" value="154431325898-rspn81ndile98j638331324b7ugpmkhs.apps.googleusercontent.com" />
-      </envs>
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
       <module name="backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.algbra.AlgbraApplication" />

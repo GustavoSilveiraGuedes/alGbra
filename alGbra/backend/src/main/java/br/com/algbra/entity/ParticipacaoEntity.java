@@ -1,28 +1,35 @@
 package br.com.algbra.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Table(name = "participacao")
-@Data
+@Table(
+        name = "participacao",
+        uniqueConstraints = @UniqueConstraint(columnNames = {"usuario_id", "desafio_diario_id"})
+)
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class ParticipacaoEntity {
 
-    @EmbeddedId
-    private ParticipacaoId id = new ParticipacaoId();
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-    @ManyToOne
-    @MapsId("usuarioId") // Aponta para o atributo usuarioId da classe ParticipacaoId
-    @JoinColumn(name = "usuario_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "usuario_id", nullable = false)
+    @JsonIgnoreProperties({"senha", "participacoes"})
     private UsuarioEntity usuario;
 
-    @ManyToOne
-    @MapsId("desafioDiarioId") // Aponta para o atributo desafioDiarioId da classe ParticipacaoId
-    @JoinColumn(name = "desafio_diario_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "desafio_diario_id", nullable = false)
+    @JsonIgnoreProperties({"participacoes"})
     private DesafioDiarioEntity desafioDiario;
 
     @Column(name = "acertou", nullable = false)

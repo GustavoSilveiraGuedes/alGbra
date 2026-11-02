@@ -1,5 +1,6 @@
 package br.com.algbra.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +14,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "participacoes"})
 public class UsuarioEntity {
 
     @Id
@@ -31,8 +33,10 @@ public class UsuarioEntity {
     @Column(name = "foto_url", length = 500)
     private String fotoUrl;
 
+    @Column(name = "is_admin", nullable = false, columnDefinition = "boolean default false")
+    private Boolean isAdmin = false;
+
     @OneToMany(mappedBy = "usuario")
+    @JsonIgnoreProperties("usuario")
     private Set<ParticipacaoEntity> participacoes = new HashSet<>();
-
-
 }

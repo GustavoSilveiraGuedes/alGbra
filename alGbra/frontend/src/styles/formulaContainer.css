@@ -1,0 +1,139 @@
+.formula-page-wrapper {
+    min-height: 100vh;
+    background-color: #0b0d10;
+    color: #e2e8f0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formula-loading {
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+.language-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.lang-button {
+    background: #1e293b;
+    color: #94a3b8;
+    border: 1px solid #334155;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0.8;
+}
+
+.formula-main-content {
+    width: 100%;
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formula-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.75rem;
+    text-align: center;
+}
+
+.formula-card-display {
+    background: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 520px;
+}
+
+.formula-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.formula-metadata {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.badge {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    color: #cbd5e1;
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+}
+
+.badge strong {
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+.formula-description {
+    line-height: 1.75;
+    font-size: 1.05rem;
+    color: #cbd5e1;
+    text-align: justify;
+    margin-bottom: 3rem;
+    background: #141820;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #21262d;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-section {
+    width: 100%;
+    text-align: center;
+}
+
+.video-section-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: #ffffff;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid #21262d;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}

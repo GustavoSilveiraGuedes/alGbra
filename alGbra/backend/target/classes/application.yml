@@ -9,7 +9,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
 
     show-sql: true
 
@@ -19,9 +19,9 @@ spring:
 
     defer-datasource-initialization: true
 
-  sql:
-    init:
-      mode: always
+#  sql:
+#    init:
+#      mode: always
 
 google:
   client-id: ${CLIENT_ID}

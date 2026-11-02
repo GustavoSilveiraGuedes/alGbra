@@ -13,4 +13,5 @@ public class UsuarioRespostaDTO {
     private String nome;
     private String email;
     private String fotoUrl;
+    private Boolean isAdmin;
 }

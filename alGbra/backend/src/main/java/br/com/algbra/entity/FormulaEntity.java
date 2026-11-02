@@ -1,5 +1,6 @@
 package br.com.algbra.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,6 +16,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class FormulaEntity {
 
     @Id
@@ -60,11 +62,13 @@ public class FormulaEntity {
     @Column(name = "video_url", nullable = false, length = 255)
     private String videoUrl;
 
-    // Relacionamento com Conteudo (que por sua vez já tem a Materia)
+    // Relacionamento com Conteudo (ignora a lista de fórmulas de volta e a matéria recursiva)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "conteudo_id", nullable = false)
+    @JsonIgnoreProperties({"formulas", "hibernateLazyInitializer", "handler"})
     private ConteudoEntity conteudo;
 
     @OneToMany(mappedBy = "formula")
+    @JsonIgnoreProperties("formula")
     private Set<DesafioDiarioEntity> desafioDiarios = new HashSet<>();
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Gamepad2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { ConteudoAccordion } from "../components/ConteudoAccordion";
 
 export function Home() {
@@ -46,11 +47,11 @@ export function Home() {
         </p>
 
         <div className="challenge-block">
-          <h2 className="challenge-title">Desafie-se</h2>
-          <p className="challenge-subtitle">Descubra a fórmula algébrica do dia.</p>
-          <button className="btn-challenge">
+          <h2 className="challenge-title fade-in-down">Desafie-se</h2>
+          <p className="challenge-subtitle fade-in-down">Descubra a fórmula algébrica do dia.</p>
+          <Link to="/dailyChallenge" className="btn-challenge fade-in" title="Jogar Desafio Diário">
             <Gamepad2 size={24} />
-          </button>
+          </Link>
         </div>
       </section>
 

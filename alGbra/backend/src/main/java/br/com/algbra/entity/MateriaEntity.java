@@ -1,5 +1,6 @@
 package br.com.algbra.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,6 +16,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class MateriaEntity {
 
     @Id
@@ -25,5 +27,6 @@ public class MateriaEntity {
     private String nome;
 
     @OneToMany(mappedBy = "materia", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("materia")
     private List<ConteudoEntity> conteudos = new ArrayList<>();
 }

@@ -1,5 +1,6 @@
 package br.com.algbra.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,6 +15,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "participacoes"})
 public class DesafioDiarioEntity {
 
     @Id
@@ -28,5 +30,6 @@ public class DesafioDiarioEntity {
     private FormulaEntity formula;
 
     @OneToMany(mappedBy = "desafioDiario")
-    private Set<ParticipacaoEntity> participacoes = new  HashSet<>();
+    @JsonIgnoreProperties("desafioDiario")
+    private Set<ParticipacaoEntity> participacoes = new HashSet<>();
 }

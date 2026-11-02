@@ -1,37 +1,37 @@
 .account-container {
-  min-height: calc(100vh - 160px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
 }
 
+/* --- TELA DE LOGIN / CADASTRO --- */
 .account-card {
   background-color: var(--bg-card);
-  border: 1px solid var(--purple-border);
-  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md, 12px);
   padding: 40px;
   width: 100%;
   max-width: 450px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  transition: border-color var(--transition-fast);
+  transition: border-color var(--transition-fast, 0.2s ease);
 }
 
 .account-card:hover {
-  border-color: var(--purple-primary);
+  border-color: var(--color-primary);
 }
 
 .account-title {
-  font-family: var(--font-code);
+  font-family: var(--font-code, monospace);
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--text-main);
+  color: var(--text-light, #ffffff);
   text-align: center;
   margin-bottom: 8px;
 }
 
 .account-subtitle {
-  color: var(--text-muted);
+  color: var(--text-secondary, #a0a0a0);
   text-align: center;
   font-size: 0.95rem;
   margin-bottom: 28px;
@@ -43,46 +43,46 @@
 
 .account-form label {
   display: block;
-  font-family: var(--font-code);
+  font-family: var(--font-code, monospace);
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--text-secondary, #a0a0a0);
   margin-bottom: 6px;
 }
 
 .account-form input {
   width: 100%;
-  background-color: var(--bg-main);
-  border: 1px solid var(--purple-border);
-  border-radius: var(--radius-sm);
+  background-color: var(--bg-dark, #0d0d12);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm, 8px);
   padding: 12px 16px;
-  color: var(--text-main);
+  color: var(--text-light, #ffffff);
   font-size: 1rem;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: border-color var(--transition-fast, 0.2s ease), box-shadow var(--transition-fast, 0.2s ease);
 }
 
 .account-form input:focus {
   outline: none;
-  border-color: var(--purple-primary);
-  box-shadow: 0 0 8px var(--purple-glow);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 8px rgba(108, 92, 231, 0.4);
 }
 
 .btn-account {
   width: 100%;
-  background-color: var(--purple-primary);
+  background-color: var(--color-primary);
   color: #ffffff;
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-sm, 8px);
   padding: 12px;
-  font-family: var(--font-code);
+  font-family: var(--font-code, monospace);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   margin-top: 10px;
-  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  transition: background-color var(--transition-fast, 0.2s ease), transform var(--transition-fast, 0.2s ease);
 }
 
 .btn-account:hover {
-  background-color: var(--purple-accent);
+  background-color: var(--color-primary-hover, #5a4bcf);
   transform: translateY(-1px);
 }
 
@@ -91,7 +91,7 @@
   align-items: center;
   text-align: center;
   margin: 24px 0;
-  color: var(--text-muted);
+  color: var(--text-secondary, #a0a0a0);
   font-size: 0.85rem;
 }
 
@@ -99,46 +99,41 @@
 .account-divider::after {
   content: "";
   flex: 1;
-  border-bottom: 1px solid var(--purple-border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .account-divider span {
   padding: 0 12px;
 }
 
-/* Tela de Perfil */
+/* --- TELA DE PERFIL (3 COLUNAS) --- */
 .profile-layout-card {
   background-color: var(--bg-card);
-  border: 1px solid var(--purple-border);
-  border-radius: var(--radius-md);
-  padding: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md, 12px);
+  padding: 32px;
   width: 100%;
-  max-width: 800px;
+  max-width: 1150px;
   display: flex;
-  align-items: center;
-  gap: 32px;
+  align-items: stretch;
+  gap: 24px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.profile-left-col {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.profile-right-col {
-  flex: 1.3;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .profile-vertical-divider {
   width: 1px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--color-border);
   align-self: stretch;
+}
+
+/* 1ª Coluna: Foto de Perfil & Painel Admin */
+.profile-left-col {
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
 }
 
 .profile-avatar-wrapper {
@@ -147,82 +142,121 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
-}
-
-.profile-eye-icon {
-  color: #ffffff;
 }
 
 .profile-avatar-img {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--purple-border);
+  border: 3px solid var(--color-primary);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
+/* 2ª Coluna: Dados e Ações do Usuário */
+.profile-center-col {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .profile-info-group {
-  margin-bottom: 28px;
-  font-family: var(--font-code);
-  font-size: 1rem;
+  margin-bottom: 20px;
+  font-family: var(--font-code, monospace);
+  font-size: 0.95rem;
 }
 
 .profile-info-group p {
-  margin-bottom: 12px;
-  color: #ffffff;
+  margin-bottom: 10px;
+  color: var(--text-light, #ffffff);
 }
 
 .profile-info-group strong {
   font-weight: 700;
   margin-right: 6px;
+  color: var(--text-secondary, #a0a0a0);
 }
 
 .profile-info-group span {
-  color: #e0e0e0;
+  color: var(--text-light, #ffffff);
 }
 
 .profile-actions-group {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+}
+
+/* Painel do Administrador */
+.admin-panel-section {
+  padding: 12px;
+  background-color: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius-sm, 8px);
+}
+
+.admin-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-code, monospace);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #d4af37;
+  margin-bottom: 8px;
+}
+
+.admin-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.btn-admin-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background-color: var(--bg-dark, #0d0d12);
+  border: 1px solid var(--color-border);
+  color: var(--text-light, #ffffff);
+  padding: 6px 8px;
+  border-radius: var(--radius-sm, 6px);
+  font-family: var(--font-code, monospace);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all var(--transition-fast, 0.2s ease);
+}
+
+.btn-admin-action:hover {
+  border-color: #d4af37;
+  color: #d4af37;
+  background-color: rgba(212, 175, 55, 0.1);
 }
 
 /* Botões do Perfil */
 .btn-profile-outline,
-.btn-profile-admin,
 .btn-profile-danger,
 .btn-profile-solid {
   width: 100%;
-  border-radius: var(--radius-sm);
-  padding: 8px 16px;
-  font-family: var(--font-code);
-  font-size: 0.9rem;
+  border-radius: var(--radius-sm, 8px);
+  padding: 9px 16px;
+  font-family: var(--font-code, monospace);
+  font-size: 0.88rem;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-fast, 0.2s ease);
 }
 
 .btn-profile-outline {
   background: transparent;
-  border: 1px solid #ffffff;
-  color: #ffffff;
+  border: 1px solid var(--color-border);
+  color: var(--text-light, #ffffff);
 }
 
 .btn-profile-outline:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.btn-profile-admin {
-  background: transparent;
-  border: 1px solid #d4af37;
-  color: #d4af37;
-  padding: 10px 16px;
-  font-weight: 600;
-}
-
-.btn-profile-admin:hover {
-  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--color-primary);
+  background: rgba(108, 92, 231, 0.1);
 }
 
 .btn-profile-danger {
@@ -239,7 +273,6 @@
   background-color: #5a6268;
   border: none;
   color: #ffffff;
-  padding: 10px 16px;
   font-weight: 600;
 }
 
@@ -247,7 +280,246 @@
   background-color: #484e53;
 }
 
-@media (max-width: 600px) {
+/* 3ª Coluna: Estatísticas, Ofensiva & Calendário */
+.profile-right-col {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.section-title {
+  font-family: var(--font-code, monospace);
+  font-size: 0.95rem;
+  color: var(--text-secondary, #a0a0a0);
+  margin-bottom: 8px;
+}
+
+/* Card de Streak / Ofensiva */
+.streak-badge-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--bg-dark, #0d0d12);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm, 8px);
+  padding: 10px 16px;
+}
+
+.streak-icon {
+  color: #ff9f43;
+  filter: drop-shadow(0 0 6px rgba(255, 159, 67, 0.6));
+}
+
+.streak-count {
+  font-family: var(--font-code, monospace);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-light, #ffffff);
+}
+
+/* Card do Gráfico de Pizza */
+.stats-chart-card {
+  background-color: var(--bg-dark, #0d0d12);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm, 8px);
+  padding: 14px 18px;
+}
+
+.chart-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.circular-chart {
+  width: 80px;
+  height: 80px;
+}
+
+/* Fundo Vermelho Padrão (Derrotas) */
+.circle-bg {
+  fill: none;
+  stroke: #ff4b4b;
+  stroke-width: 3.8;
+}
+
+/* Círculo superior para preencher as vitórias por cima */
+.circle {
+  fill: none;
+  stroke-width: 3.8;
+  stroke: var(--color-primary, #6a5aca);
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.6s ease;
+}
+
+.chart-percentage {
+  fill: var(--text-light, #ffffff);
+  font-family: var(--font-code, monospace);
+  font-size: 0.55rem;
+  text-anchor: middle;
+  font-weight: bold;
+}
+
+.chart-legend {
+  font-family: var(--font-code, monospace);
+  font-size: 0.85rem;
+}
+
+.chart-legend p {
+  color: var(--text-secondary, #a0a0a0);
+  margin-bottom: 4px;
+}
+
+.chart-legend strong {
+  color: var(--text-light, #ffffff);
+}
+
+.dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.dot-win {
+  background-color: var(--color-primary, #6a5aca);
+}
+
+.dot-loss {
+  background-color: #ff4b4b;
+}
+
+/* Card do Calendário */
+.calendar-card {
+  background-color: var(--bg-dark, #0d0d12);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm, 8px);
+  padding: 14px 18px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-month-title {
+  font-family: var(--font-code, monospace);
+  font-weight: 700;
+  color: var(--text-light, #ffffff);
+  font-size: 0.88rem;
+}
+
+.btn-cal-arrow {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary, #a0a0a0);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  transition: color var(--transition-fast, 0.2s ease);
+}
+
+.btn-cal-arrow:hover {
+  color: var(--text-light, #ffffff);
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  color: var(--text-secondary, #a0a0a0);
+  font-family: var(--font-code, monospace);
+  font-weight: 700;
+  font-size: 0.75rem;
+  margin-bottom: 6px;
+}
+
+.calendar-days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.cal-day {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-family: var(--font-code, monospace);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.cal-day.win {
+  background-color: var(--color-primary, #6a5aca);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 0 8px rgba(106, 90, 204, 0.4);
+}
+
+.cal-day.loss {
+  background-color: #ff4b4b;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 0 8px rgba(255, 75, 75, 0.35);
+}
+
+/* Card de Streak Inativo (0 dias) */
+.streak-badge-card.inactive {
+  background-color: rgba(13, 13, 18, 0.5);
+  border-color: rgba(255, 255, 255, 0.05);
+  opacity: 0.45;
+}
+
+.streak-badge-card.inactive .streak-icon {
+  color: var(--text-secondary, #a0a0a0);
+  filter: none;
+}
+
+.streak-badge-card.inactive .streak-count {
+  color: var(--text-secondary, #a0a0a0);
+}
+
+.btn-cal-arrow.disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Botão Jogar no Header */
+.nav-btn-challenge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(106, 90, 204, 0.12);
+  border: 1px solid rgba(106, 90, 204, 0.4);
+  color: var(--color-accent, #8b7beb) !important;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  transition: all var(--transition-fast) !important;
+  box-shadow: 0 0 10px rgba(106, 90, 204, 0.15);
+  text-decoration: none;
+}
+
+.nav-btn-challenge:hover {
+  background: rgba(106, 90, 204, 0.25);
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 0 12px var(--color-glow);
+}
+
+@media (max-width: 900px) {
   .profile-layout-card {
     flex-direction: column;
     padding: 24px;
@@ -256,5 +528,10 @@
   .profile-vertical-divider {
     width: 100%;
     height: 1px;
+    margin: 8px 0;
+  }
+
+  .admin-actions-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

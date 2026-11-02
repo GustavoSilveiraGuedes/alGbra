@@ -1,5 +1,6 @@
 package br.com.algbra.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,6 +16,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class ConteudoEntity {
 
     @Id
@@ -26,8 +28,10 @@ public class ConteudoEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "materia_id", nullable = false)
+    @JsonIgnoreProperties({"conteudos", "hibernateLazyInitializer", "handler"})
     private MateriaEntity materia;
 
     @OneToMany(mappedBy = "conteudo", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("conteudo")
     private List<FormulaEntity> formulas = new ArrayList<>();
 }
